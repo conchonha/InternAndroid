@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/callFragment"
+        android:icon="@drawable/ic_call"
+        android:title="Nhạc chuông" />
+    <item
+        android:id="@+id/imageFragment"
+        android:icon="@drawable/ic_image"
+        android:title="Hình nền" />
+    <item
+        android:id="@+id/gifFragment"
+        android:icon="@drawable/ic_gif"
+        android:title="Hình động" />
+    <item
+        android:id="@+id/screenFragment"
+        android:icon="@drawable/ic_screen"
+        android:title="Màn hình" />
+</menu>
