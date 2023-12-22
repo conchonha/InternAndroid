@@ -1,60 +1,21 @@
 package com.example.learnnavigation.model
 
 import com.google.gson.annotations.SerializedName
-import com.google.gson.annotations.Expose
 
-class ImagesResult {
 
-    @SerializedName("is_product")
-    @Expose
-    var is_product: Boolean = true
+data class ImagesResults (
 
-    @SerializedName("link")
-    @Expose
-    var link: String? = ""
+    @SerializedName("position"                     ) var position                  : Int?     = null,
+    @SerializedName("thumbnail"                    ) var thumbnail                 : String?  = null,
+    @SerializedName("related_content_id"           ) var relatedContentId          : String?  = null,
+    @SerializedName("serpapi_related_content_link" ) var serpapiRelatedContentLink : String?  = null,
+    @SerializedName("source"                       ) var source                    : String?  = null,
+    @SerializedName("source_logo"                  ) var sourceLogo                : String?  = null,
+    @SerializedName("title"                        ) var title                     : String?  = null,
+    @SerializedName("link"                         ) var link                      : String?  = null,
+    @SerializedName("original"                     ) var original                  : String?  = null,
+    @SerializedName("original_width"               ) var originalWidth             : Int?     = null,
+    @SerializedName("original_height"              ) var originalHeight            : Int?     = null,
+    @SerializedName("is_product"                   ) var isProduct                 : Boolean? = null
 
-    @SerializedName("original")
-    @Expose
-    var original: String? = ""
-
-    @SerializedName("original_height")
-    @Expose
-    private var original_height: Int? = 0
-
-    @SerializedName("original_width")
-    @Expose
-    private var original_width: Int? = 0
-
-    @SerializedName("position")
-    @Expose
-    private var position: Int? = 0
-
-    @SerializedName("related_content_id")
-    @Expose
-    var related_content_id: String? = ""
-
-    @SerializedName("serpapi_related_content_link")
-    @Expose
-    var serpapi_related_content_link: String? = ""
-
-    @SerializedName("source")
-    @Expose
-    var source: String? = ""
-
-    @SerializedName("source_logo")
-    @Expose
-    var source_logo: String? = ""
-
-    @SerializedName("tag")
-    @Expose
-    var tag: String? = ""
-
-    @SerializedName("thumbnail")
-    @Expose
-    var thumbnail: String? = ""
-
-    @SerializedName("title")
-    @Expose
-    var title: String? = ""
-
-}
+)

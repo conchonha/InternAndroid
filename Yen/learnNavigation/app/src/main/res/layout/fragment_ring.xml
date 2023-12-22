@@ -3,16 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBgFragment"
     android:orientation="vertical"
-    android:background="#454242"
     tools:context=".view.fragment.FragmentRing">
 
     <TextView
-        android:gravity="center"
-        android:textSize="30sp"
-        android:textColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment_location" />
+        android:gravity="center"
+        android:text="@string/hello_blank_fragment_location"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_30sp" />
 
 </LinearLayout>

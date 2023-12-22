@@ -1,31 +1,12 @@
 package com.example.learnnavigation.model
 
-import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-class SearchParameters {
-
-    @SerializedName("device")
-    @Expose
-    var device: String? = ""
-
-    @SerializedName("engine")
-    @Expose
-    var engine: String? = ""
-
-    @SerializedName("gl")
-    @Expose
-    var gl: String? = ""
-
-    @SerializedName("google_domain")
-    @Expose
-    var google_domain: String? = ""
-
-    @SerializedName("hl")
-    @Expose
-    var hl: String? = ""
-
-    @SerializedName("q")
-    @Expose
-    var q: String? = ""
-}
+data class SearchParameters (
+    @SerializedName("engine"        ) var engine       : String? = null,
+    @SerializedName("q"             ) var q            : String? = null,
+    @SerializedName("google_domain" ) var googleDomain : String? = null,
+    @SerializedName("hl"            ) var hl           : String? = null,
+    @SerializedName("gl"            ) var gl           : String? = null,
+    @SerializedName("device"        ) var device       : String? = null
+)

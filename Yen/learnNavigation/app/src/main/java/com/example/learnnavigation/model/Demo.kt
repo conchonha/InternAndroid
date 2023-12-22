@@ -1,10 +1,13 @@
 package com.example.learnnavigation.model
 
-data class Demo(
-    val images_results: List<ImagesResult>,
-    val related_searches: List<RelatedSearche>,
-    val search_information: SearchInformation,
-    val search_metadata: SearchMetadata,
-    val search_parameters: SearchParameters,
-    val suggested_searches: List<SuggestedSearches>
+import com.google.gson.annotations.SerializedName
+
+data class Demo (
+
+    @SerializedName("search_metadata"    ) var searchMetadata    : SearchMetadata?              = SearchMetadata(),
+    @SerializedName("search_parameters"  ) var searchParameters  : SearchParameters?            = SearchParameters(),
+    @SerializedName("search_information" ) var searchInformation : SearchInformation?           = SearchInformation(),
+    @SerializedName("suggested_searches" ) var suggestedSearches : ArrayList<SuggestedSearches> = arrayListOf(),
+    @SerializedName("images_results"     ) var imagesResults     : ArrayList<ImagesResults>     = arrayListOf(),
+    @SerializedName("related_searches"   ) var relatedSearches   : ArrayList<RelatedSearches>   = arrayListOf()
 )

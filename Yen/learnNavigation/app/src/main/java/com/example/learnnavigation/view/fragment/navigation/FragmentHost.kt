@@ -4,29 +4,26 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
+import com.example.learnnavigation.Const.INDEX_FRAIMAGE
+import com.example.learnnavigation.Const.INDEX_FRBGIMAGE
+import com.example.learnnavigation.Const.INDEX_FRRING
+import com.example.learnnavigation.Const.INDEX_FRSCREENIMAGE
 import com.example.learnnavigation.R
 import com.example.learnnavigation.adapter.ViewPage2Adapter
+import com.example.learnnavigation.databinding.FragmentAnimationImageBinding
 import com.example.learnnavigation.databinding.FragmentHostBinding
-import com.example.learnnavigation.view.fragment.FragmentAnimation
-import com.example.learnnavigation.view.fragment.FragmentRing
-import com.example.learnnavigation.view.fragment.FragmentBackgroundImage
-import com.example.learnnavigation.view.fragment.FragmentScreen
+import com.example.learnnavigation.view.fragment.BaseFragmentDataBinding
 
-class FragmentHost : Fragment(R.layout.fragment_host) {
+ class FragmentHost : BaseFragmentDataBinding<FragmentHostBinding>() {
 
-    private lateinit var binding: FragmentHostBinding
-    private lateinit var adapter: ViewPage2Adapter
+     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentHostBinding =
+         FragmentHostBinding::inflate
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentHostBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+     override val layoutId: Int = R.layout.fragment_animation_image
+
+     private val adapter by lazy { ViewPage2Adapter(this) }
+    private val viewPage2 by lazy { binding.viewPage2 }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -35,16 +32,8 @@ class FragmentHost : Fragment(R.layout.fragment_host) {
     }
 
     private fun setupViewPager() {
-        val fragmentList = arrayListOf(
-            Pair(FragmentRing(), 0),
-            Pair(FragmentBackgroundImage(), 1),
-            Pair(FragmentAnimation(), 2),
-            Pair(FragmentScreen(), 3)
-        )
-        adapter = ViewPage2Adapter(fragmentList, childFragmentManager, lifecycle)
-        with(binding.viewPage2) {
+        with(viewPage2) {
             adapter = this@FragmentHost.adapter
-            offscreenPageLimit = fragmentList.size - 1
             isSaveEnabled = true
             registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
                 override fun onPageSelected(position: Int) {
@@ -57,13 +46,16 @@ class FragmentHost : Fragment(R.layout.fragment_host) {
 
     private fun setupBottomNavigationView() {
         binding.bottomNav.setOnItemSelectedListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.frRing -> binding.viewPage2.currentItem = 0
-                R.id.frBackgroundImage -> binding.viewPage2.currentItem = 1
-                R.id.frAnimation -> binding.viewPage2.currentItem = 2
-                R.id.frScreen -> binding.viewPage2.currentItem = 3
+            val currentItem = when (menuItem.itemId) {
+                R.id.frRing -> INDEX_FRRING
+                R.id.frBackgroundImage -> INDEX_FRBGIMAGE
+                R.id.frAnimImage -> INDEX_FRAIMAGE
+                R.id.frScreenImage -> INDEX_FRSCREENIMAGE
+                else -> return@setOnItemSelectedListener false
             }
+            viewPage2.currentItem = currentItem
             true
         }
     }
+
 }

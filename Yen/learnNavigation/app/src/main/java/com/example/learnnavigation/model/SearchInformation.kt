@@ -1,16 +1,10 @@
 package com.example.learnnavigation.model
 
-import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-class SearchInformation {
-    @SerializedName("image_results_state")
-    @Expose
-    var image_results_state: String? = ""
+data class SearchInformation (
 
-    val menu_items: List<MenuItem>
-        get() {
-            TODO()
-        }
+    @SerializedName("image_results_state" ) var imageResultsState : String?              = null,
+    @SerializedName("menu_items"          ) var menuItems         : ArrayList<MenuItem> = arrayListOf()
 
-}
+)

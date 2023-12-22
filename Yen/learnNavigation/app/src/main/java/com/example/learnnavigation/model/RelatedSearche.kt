@@ -1,28 +1,12 @@
 package com.example.learnnavigation.model
 
-import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+data class RelatedSearches (
 
-class RelatedSearche {
+    @SerializedName("link"              ) var link             : String?           = null,
+    @SerializedName("serpapi_link"      ) var serpapiLink      : String?           = null,
+    @SerializedName("query"             ) var query            : String?           = null,
+    @SerializedName("highlighted_words" ) var highlightedWords : ArrayList<String> = arrayListOf(),
+    @SerializedName("thumbnail"         ) var thumbnail        : String?           = null
 
-    @SerializedName("highlighted_words")
-    @Expose
-    lateinit var highlighted_words: List<String>
-
-    @SerializedName("link")
-    @Expose
-    var link: String? = ""
-
-    @SerializedName("query")
-    @Expose
-    var query: String? = ""
-
-    @SerializedName("serpapi_link")
-    @Expose
-    var serpapi_link: String? = ""
-
-    @SerializedName("thumbnail")
-    @Expose
-    var thumbnail: String? = ""
-
-}
+)

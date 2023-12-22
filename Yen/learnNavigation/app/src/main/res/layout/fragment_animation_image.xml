@@ -3,15 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#454242"
-    tools:context=".view.fragment.FragmentAnimation">
+    android:background="@color/colorBgFragment"
+    tools:context=".view.fragment.FragmentAnimImage">
 
     <TextView
-        android:gravity="center"
-        android:textSize="30sp"
-        android:textColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment_heart" />
+        android:gravity="center"
+        android:text="@string/hello_blank_fragment_heart"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_30sp" />
 
 </FrameLayout>

@@ -11,12 +11,12 @@
         android:icon="@drawable/ic_image_24" />
 
     <item
-        android:id="@+id/frAnimation"
+        android:id="@+id/frAnimImage"
         android:title="@string/heart"
         android:icon="@drawable/ic_image_search" />
 
     <item
-        android:id="@+id/frScreen"
+        android:id="@+id/frScreenImage"
         android:title="@string/global"
         android:icon="@drawable/ic_screen" />
 
