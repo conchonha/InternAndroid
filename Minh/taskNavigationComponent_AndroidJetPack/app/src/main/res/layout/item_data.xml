@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="10dp"
+    android:layout_marginStart="@dimen/_10dp"
     android:background="@color/white">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:cardCornerRadius="10dp"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="@dimen/_0dp"
+        app:cardCornerRadius="@dimen/_10dp"
         app:layout_constraintDimensionRatio="w,1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,12 +21,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </androidx.cardview.widget.CardView>
-<!--    minh/task/NavigationComponent_AndroidJetPack-->
     <TextView
         android:id="@+id/tv_name"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/_0dp"
         android:layout_height="wrap_content"
-        android:textSize="14dp"
+        android:textSize="@dimen/_17dp"
         android:gravity="center"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@id/cardview"
