@@ -17,9 +17,6 @@ import com.example.learnnavigation.view.fragment.BaseFragmentDataBinding
 
  class FragmentHost : BaseFragmentDataBinding<FragmentHostBinding>() {
 
-     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentHostBinding =
-         FragmentHostBinding::inflate
-
      override val layoutId: Int = R.layout.fragment_animation_image
 
      private val adapter by lazy { ViewPage2Adapter(this) }

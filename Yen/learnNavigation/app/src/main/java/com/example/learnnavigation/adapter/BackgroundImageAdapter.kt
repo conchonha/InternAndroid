@@ -12,10 +12,14 @@ import com.example.learnnavigation.extension.Extension.Companion.loadImage
 class BackgroundImageAdapter : RecyclerView.Adapter<BackgroundImageAdapter.ViewHolder>() {
 
     private val asyncListDiffer = AsyncListDiffer(this, DiffCallback())
+    val listItem: List<SuggestedSearches>
+        get() = asyncListDiffer.currentList
 
     fun setData(data: List<SuggestedSearches>) {
         asyncListDiffer.submitList(data)
     }
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemsBackgroundImageFragmentBinding.inflate(
             LayoutInflater.from(parent.context),
@@ -26,14 +30,11 @@ class BackgroundImageAdapter : RecyclerView.Adapter<BackgroundImageAdapter.ViewH
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val suggestedSearch = asyncListDiffer.currentList.getOrNull(position)
-        suggestedSearch?.let {
-            holder.bind(it)
-        }
+        holder.bind(listItem.getOrNull(position) ?: return)
     }
 
     override fun getItemCount(): Int {
-        return asyncListDiffer.currentList.size
+        return listItem.size
     }
 
     inner class ViewHolder(private val binding: ItemsBackgroundImageFragmentBinding) :

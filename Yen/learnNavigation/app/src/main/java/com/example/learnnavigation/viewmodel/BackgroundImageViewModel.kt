@@ -28,6 +28,7 @@ class BackgroundImageViewModel : BaseViewModel() {
 open class BaseViewModel : ViewModel() {
     val loadingDialog = SingleLiveEvent<Boolean>()
     val message = SingleLiveEvent<String>()
+
     fun <T : Any> Call<T>.obsever(result: T.() -> Unit) {
         loadingDialog.postValue(true)
         enqueue(object : Callback<T> {

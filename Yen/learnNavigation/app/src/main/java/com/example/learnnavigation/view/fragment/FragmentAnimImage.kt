@@ -5,10 +5,6 @@ import android.view.ViewGroup
 import com.example.learnnavigation.R
 import com.example.learnnavigation.databinding.FragmentAnimationImageBinding
 
- class FragmentAnimImage : BaseFragmentDataBinding<FragmentAnimationImageBinding>() {
-
-    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentAnimationImageBinding =
-        FragmentAnimationImageBinding::inflate
-
-    override val layoutId: Int = R.layout.fragment_animation_image
-}
+ class FragmentAnimImage  : BaseFragmentDataBinding<FragmentAnimationImageBinding>() {
+     override val layoutId: Int = R.layout.fragment_animation_image
+ }
