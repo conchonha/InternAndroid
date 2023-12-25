@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/frRing"
+        android:title="@string/chart"
+        android:icon="@drawable/ic_volume" />
+
+    <item
+        android:id="@+id/frBackgroundImage"
+        android:title="@string/location"
+        android:icon="@drawable/ic_image_24" />
+
+    <item
+        android:id="@+id/frAnimImage"
+        android:title="@string/heart"
+        android:icon="@drawable/ic_image_search" />
+
+    <item
+        android:id="@+id/frScreenImage"
+        android:title="@string/global"
+        android:icon="@drawable/ic_screen" />
+
+</menu>
