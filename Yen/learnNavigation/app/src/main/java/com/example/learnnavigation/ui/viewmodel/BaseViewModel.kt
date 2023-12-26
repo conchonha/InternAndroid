@@ -1,10 +1,12 @@
-package com.example.learnnavigation.viewmodel
+package com.example.learnnavigation.ui.viewmodel
 
+import android.content.Context
 import android.util.Log
 import androidx.lifecycle.ViewModel
-import com.example.learnnavigation.data.api.ApiService
 import com.example.learnnavigation.extension.traceErrorException
-import com.example.learnnavigation.model.SuggestedSearches
+import com.example.learnnavigation.ui.dialog.DialogUtils.dismissLoadingDialog
+import com.example.learnnavigation.ui.dialog.DialogUtils.showErrorDialog
+import com.example.learnnavigation.ui.dialog.DialogUtils.showLoadingDialog
 import com.example.learnnavigation.utils.SingleLiveEvent
 import org.json.JSONObject
 import retrofit2.Call
@@ -12,54 +14,44 @@ import retrofit2.Callback
 import retrofit2.HttpException
 import retrofit2.Response
 
-class BackgroundImageViewModel : BaseViewModel() {
-
-    val suggestedSearches = SingleLiveEvent<List<SuggestedSearches>>()
-
-    fun fetchDataFromApi() {
-        val apiService = ApiService.getService()
-
-        apiService.getDictionaries().obsever {
-            this@BackgroundImageViewModel.suggestedSearches.postValue(suggestedSearches)
-        }
-    }
-}
-
 open class BaseViewModel : ViewModel() {
-    val loadingDialog = SingleLiveEvent<Boolean>()
     val message = SingleLiveEvent<String>()
 
-    fun <T : Any> Call<T>.obsever(result: T.() -> Unit) {
-        loadingDialog.postValue(true)
+    fun <T : Any> Call<T>.observe(context: Context, result: T.() -> Unit) {
+        showLoadingDialog(context)
+
         enqueue(object : Callback<T> {
             override fun onResponse(call: Call<T>, response: Response<T>) {
-                loadingDialog.postValue(false)
+                dismissLoadingDialog()
+
                 if (response.isSuccessful) {
                     result.invoke(response.body() as T)
                 } else {
                     try {
                         response.errorBody()?.charStream()?.readText().run {
                             if (!this.isNullOrBlank()) {
-                                val message = JSONObject(this).getString("message")
-                                if (message != null) {
-
+                                val errorMessage = JSONObject(this).getString("message")
+                                if (!errorMessage.isNullOrBlank()) {
+                                    showErrorDialog(context, errorMessage)
                                     return
                                 }
                             }
                         }
                     } catch (e: Exception) {
-                        message.postValue(traceErrorException(HttpException(response)))
+                        showErrorDialog(context,
+                            message.postValue(traceErrorException(HttpException(response)))
+                                .toString()
+                        )
+
                     }
                 }
             }
+
             override fun onFailure(call: Call<T>, t: Throwable) {
+                dismissLoadingDialog()
+                showErrorDialog(context, message.postValue(traceErrorException(t)).toString())
                 Log.d("errorCall", t.toString())
-                loadingDialog.postValue(false)
-                message.postValue(traceErrorException(t))
             }
         })
     }
 }
-
-
-
