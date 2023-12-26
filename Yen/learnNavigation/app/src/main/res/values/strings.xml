@@ -1,12 +1,10 @@
 <resources>
     <string name="app_name">learnNavigation</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment_location">Hello blank fragment background image</string>
-    <string name="hello_blank_fragment_heart">Hello blank fragment animation</string>
-    <string name="hello_blank_fragment_global">Hello blank fragment screen</string>
-    <string name="Ring">Nhạc chuông</string>
-    <string name="BgImage">Hình nền</string>
-    <string name="AnimImage">Hình động</string>
-    <string name="ScreenImage">Màn hình</string>
-    <string name="error_title">Lỗi API rồi!</string>
+    <string name="Ring">Ringtone</string>
+    <string name="BgImage">Wallpaper</string>
+    <string name="AnimImage">Animated Image</string>
+    <string name="ScreenImage">Screen</string>
+    <string name="error_title">Error API!</string>
+    <string name="search">Search</string>
+    <string name="crown">Crown</string>
 </resources>
