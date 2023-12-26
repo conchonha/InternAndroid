@@ -26,6 +26,7 @@ class FragmentHost : BaseFragmentDataBinding<FragmentHostBinding, HostViewModel>
         setupViewPager()
         setupBottomNavigationView()
         (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        binding.viewPage2.isUserInputEnabled = false;
     }
 
     private fun setupViewPager() {
@@ -37,10 +38,10 @@ class FragmentHost : BaseFragmentDataBinding<FragmentHostBinding, HostViewModel>
                 override fun onPageSelected(position: Int) {
                     super.onPageSelected(position)
                     val title = when (position) {
-                        INDEX_FRRING -> "Nhạc chuông"
-                        INDEX_FRBGIMAGE -> "Hình nền"
-                        INDEX_FRAIMAGE -> "Hình động"
-                        INDEX_FRSCREENIMAGE -> "Màn hình"
+                        INDEX_FRRING -> resources.getString(R.string.Ring)
+                        INDEX_FRBGIMAGE -> resources.getString(R.string.BgImage)
+                        INDEX_FRAIMAGE -> resources.getString(R.string.AnimImage)
+                        INDEX_FRSCREENIMAGE -> resources.getString(R.string.ScreenImage)
                         else -> ""
                     }
                     (activity as MainActivity).setToolbarTitle(title)
@@ -53,10 +54,10 @@ class FragmentHost : BaseFragmentDataBinding<FragmentHostBinding, HostViewModel>
     private fun setupBottomNavigationView() {
         binding.bottomNav.setOnItemSelectedListener { menuItem ->
             val currentItem = when (menuItem.itemId) {
-                R.id.frRing -> INDEX_FRRING
-                R.id.frBackgroundImage -> INDEX_FRBGIMAGE
-                R.id.frAnimImage -> INDEX_FRAIMAGE
-                R.id.frScreenImage -> INDEX_FRSCREENIMAGE
+                R.id.lbl_Ring -> INDEX_FRRING
+                R.id.lbl_BackgroundImage -> INDEX_FRBGIMAGE
+                R.id.lbl_AnimImage -> INDEX_FRAIMAGE
+                R.id.lbl_ScreenImage -> INDEX_FRSCREENIMAGE
                 else -> return@setOnItemSelectedListener false
             }
             viewPage2.currentItem = currentItem
