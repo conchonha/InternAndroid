@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorBgFragment"
-        tools:context=".view.fragment.FragmentBackgroundImage">
+        tools:context=".ui.fragment.FragmentBackgroundImage">
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -16,7 +16,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:layout_marginTop="@dimen/_2dp"
             android:clipToPadding="false"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"

@@ -2,7 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="colorBgToolBar">#976161</color>
-    <color name="colorBgNavigation">#976161</color>
+    <color name="colorBgToolBar">#2E2B2B</color>
+    <color name="colorBgNavigation">#2E2B2B</color>
     <color name="colorBgFragment">#454242</color>
+    <color name="colorNavSelect">#4CAF50</color>
 </resources>

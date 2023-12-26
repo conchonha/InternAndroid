@@ -6,7 +6,7 @@
     app:startDestination="@id/fragmentHost">
     <fragment
         android:id="@+id/fragmentHost"
-        android:name="com.example.learnnavigation.view.fragment.navigation.FragmentHost"
+        android:name="com.example.learnnavigation.ui.fragment.navigation.FragmentHost"
         android:label="fragment_host"
         tools:layout="@layout/fragment_host" />
 </navigation>

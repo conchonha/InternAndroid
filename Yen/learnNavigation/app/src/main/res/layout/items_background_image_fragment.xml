@@ -6,15 +6,13 @@
 
         <variable
             name="suggestedSearch"
-            type="com.example.learnnavigation.model.SuggestedSearches" />
+            type="com.example.learnnavigation.data.model.SuggestedSearches" />
     </data>
 
     <androidx.cardview.widget.CardView
         style="@style/cardViewStyle"
-        android:layout_width="@dimen/_120dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_8dp"
-        android:layout_marginTop="@dimen/_10dp">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -36,7 +34,7 @@
                 android:layout_gravity="center"
                 android:text="@{suggestedSearch.name}"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_20sp" />
+                android:textSize="@dimen/_13sp" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

@@ -9,7 +9,8 @@
 
     <item
         android:id="@+id/action_top"
-        android:icon="@drawable/image3"
-        android:title="Search"
+        android:icon="@drawable/ic_crown"
+        android:title="Crown"
         app:showAsAction="ifRoom" />
+
 </menu>
