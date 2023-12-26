@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/frRing"
+        android:id="@+id/lbl_Ring"
         android:title="@string/Ring"
         android:icon="@drawable/ic_volume" />
 
     <item
-        android:id="@+id/frBackgroundImage"
+        android:id="@+id/lbl_BackgroundImage"
         android:title="@string/BgImage"
         android:icon="@drawable/ic_image_24" />
 
     <item
-        android:id="@+id/frAnimImage"
+        android:id="@+id/lbl_AnimImage"
         android:title="@string/AnimImage"
         android:icon="@drawable/ic_image_search" />
 
     <item
-        android:id="@+id/frScreenImage"
+        android:id="@+id/lbl_ScreenImage"
         android:title="@string/ScreenImage"
         android:icon="@drawable/ic_screen" />
 
