@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">learnNavigation</string>
+    <string name="Ring">Nhạc chuông</string>
+    <string name="BgImage">Hình nền</string>
+    <string name="AnimImage">Hình động</string>
+    <string name="ScreenImage">Màn hình</string>
+    <string name="error_title">Lỗi API rồi!</string>
+    <string name="search">Tìm kiếm</string>
+    <string name="crown">Vương miện</string>
+</resources>
