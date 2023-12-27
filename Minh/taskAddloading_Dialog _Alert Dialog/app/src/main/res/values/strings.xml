@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TaskDeha</string>
+    <string name="ring_tone">Nhạc chuông</string>
+    <string name="bg_image">Hình nền</string>
+    <string name="animation">Hình động</string>
+    <string name="screen">Màn hình</string>
+    <string name="error">Lỗi!</string>
+</resources>
