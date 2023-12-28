@@ -14,10 +14,12 @@ import androidx.lifecycle.LifecycleOwner
 import com.example.learnnavigation.app.MyApplication
 import com.example.learnnavigation.ui.activity.MainActivity
 
+interface IInternetChange{
+    fun onInternetChange(isNetWork: Boolean)
+}
 
-typealias CallBackResult = (Boolean) -> Unit
-class CustomLifecycle() : DefaultLifecycleObserver {
-    val internetChangeCallbacks = java.util.HashSet<CallBackResult>()
+class CustomLifecycle : DefaultLifecycleObserver {
+    val internetChangeCallbacks = java.util.HashSet<IInternetChange>()
     var activity: MainActivity? = null
 
     private val netWorkChange by lazy {
@@ -25,7 +27,7 @@ class CustomLifecycle() : DefaultLifecycleObserver {
             override fun onReceive(context: Context?, intent: Intent?) {
                 internetChangeCallbacks.forEach {
                     val isInterNet: Boolean = checkInternet()
-                    it.invoke(isInterNet)
+                    it.onInternetChange(isInterNet)
                 }
             }
         }
@@ -67,12 +69,14 @@ class CustomLifecycle() : DefaultLifecycleObserver {
             ?: false
     }
 
-    fun addInternetChange(callback: (Boolean) -> Unit) {
-        internetChangeCallbacks.add(callback)
+    //0x1cc
+    fun addInternetChange(iInternetChange: IInternetChange) {
+        internetChangeCallbacks.add(iInternetChange)
     }
 
-    fun removeInternetChange(callback: (Boolean) -> Unit) {
-        internetChangeCallbacks.remove(callback)
+    //0x1cc
+    fun removeInternetChange(iInternetChange: IInternetChange) {
+        internetChangeCallbacks.remove(iInternetChange)
     }
 }
 

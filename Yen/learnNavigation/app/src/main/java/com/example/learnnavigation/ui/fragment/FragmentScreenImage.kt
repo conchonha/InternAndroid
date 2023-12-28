@@ -6,10 +6,10 @@ import androidx.fragment.app.viewModels
 import com.example.learnnavigation.R
 import com.example.learnnavigation.ui.adapter.AnimImageAdapter
 import com.example.learnnavigation.databinding.FragmentScreenImageBinding
-import com.example.learnnavigation.ui.activity.MainActivity
 import com.example.learnnavigation.ui.viewmodel.ScreenImageViewModel
 import com.example.learnnavigation.utils.Const.HORIZONTAL_SPACE
 import com.example.learnnavigation.utils.Const.VERTICAL_SPACE
+import com.example.learnnavigation.utils.DialogUtils
 import com.example.learnnavigation.utils.ItemSpacingDecoration
 
 class FragmentScreenImage: BaseFragmentDataBinding<FragmentScreenImageBinding, ScreenImageViewModel>() {
@@ -32,9 +32,9 @@ class FragmentScreenImage: BaseFragmentDataBinding<FragmentScreenImageBinding, S
              }
              vm.fetchDataFromApi()
          }
-
-         (requireActivity() as MainActivity).registerInternetChange(this)
-         (requireActivity() as MainActivity).unregisterInternetChange()
-
      }
+
+    override fun onInternetChange(isNetWork: Boolean) {
+
+    }
 }

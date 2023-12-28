@@ -8,9 +8,9 @@
     <style name="Theme.LearnRetrofit2" parent="Base.Theme.LearnRetrofit2" />
 
     <style name="cardViewStyle">
-        <item name="cardCornerRadius">8dp</item>
+        <item name="cardCornerRadius">@dimen/_18dp</item>
         <item name="android:foreground">?selectableItemBackground</item>
-        <item name="cardElevation">4dp</item>
+        <item name="cardElevation">@dimen/_12dp</item>
         <item name="cardBackgroundColor">@color/white</item>
     </style>
 

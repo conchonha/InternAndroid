@@ -1,4 +1,4 @@
-package com.example.learnnavigation.ui.dialog
+package com.example.learnnavigation.utils
 
 import android.app.AlertDialog
 import android.app.Dialog
@@ -7,9 +7,8 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.util.Log
 import com.example.learnnavigation.R
-import com.example.learnnavigation.utils.SingleLiveEvent
 
- object DialogUtils {
+object DialogUtils {
     @Volatile
     var countApi = 0
 

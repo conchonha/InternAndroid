@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.learnnavigation.extension.traceErrorException
-import com.example.learnnavigation.ui.dialog.DialogUtils.isLoadingDialog
+import com.example.learnnavigation.utils.DialogUtils.isLoadingDialog
 import com.example.learnnavigation.utils.SingleLiveEvent
 import org.json.JSONObject
 import retrofit2.Call

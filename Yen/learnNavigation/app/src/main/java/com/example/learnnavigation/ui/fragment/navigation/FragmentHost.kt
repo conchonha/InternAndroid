@@ -28,6 +28,10 @@ class FragmentHost : BaseFragmentDataBinding<FragmentHostBinding, HostViewModel>
         (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
         binding.viewPage2.isUserInputEnabled = false;
     }
+
+    override fun onInternetChange(isNetWork: Boolean) {
+    }
+
     private fun setupViewPager() {
         with(viewPage2) {
             adapter = this@FragmentHost.adapter

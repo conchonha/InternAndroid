@@ -9,6 +9,7 @@ import com.example.learnnavigation.databinding.FragmentBackgroundImageBinding
 import com.example.learnnavigation.ui.viewmodel.BackgroundImageViewModel
 import com.example.learnnavigation.utils.Const.HORIZONTAL_SPACE
 import com.example.learnnavigation.utils.Const.VERTICAL_SPACE
+import com.example.learnnavigation.utils.DialogUtils
 import com.example.learnnavigation.utils.ItemSpacingDecoration
 class FragmentBackgroundImage : BaseFragmentDataBinding<FragmentBackgroundImageBinding, BackgroundImageViewModel>() {
 
@@ -32,5 +33,9 @@ class FragmentBackgroundImage : BaseFragmentDataBinding<FragmentBackgroundImageB
             }
             vm.fetchDataFromApi()
         }
+    }
+
+    override fun onInternetChange(isNetWork: Boolean) {
+
     }
 }

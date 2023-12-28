@@ -3,17 +3,14 @@ package com.example.learnnavigation.ui.activity
 import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.learnnavigation.R
 import com.example.learnnavigation.databinding.ActivityMainBinding
-import com.example.learnnavigation.ui.CallBackResult
 import com.example.learnnavigation.ui.CustomLifecycle
-import com.example.learnnavigation.ui.dialog.DialogUtils.dismissLoadingDialog
-import com.example.learnnavigation.ui.dialog.DialogUtils.inProgress
-import com.example.learnnavigation.ui.dialog.DialogUtils.isLoadingDialog
-import com.example.learnnavigation.ui.dialog.DialogUtils.showErrorDialog
+import com.example.learnnavigation.ui.IInternetChange
+import com.example.learnnavigation.utils.DialogUtils.inProgress
+import com.example.learnnavigation.utils.DialogUtils.isLoadingDialog
 
 class MainActivity : AppCompatActivity() {
 
@@ -49,32 +46,10 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
 
-    fun registerInternetChange(fragment: Fragment) {
-        val networkChange = object : CallBackResult {
-            override fun invoke(isConnected: Boolean) {
-                if (!isConnected) {
-                    showErrorDialog(fragment.requireContext(), "Kết nối mạng mau")
-                } else {
-                    dismissLoadingDialog()
-                }
-            }
-        }
-        addInternetChange(networkChange)
-    }
-    fun unregisterInternetChange() {
-        val networkChange = object : CallBackResult {
-            override fun invoke(isConnected: Boolean) {
-                if (!isConnected) {
-                    dismissLoadingDialog()
-                }
-            }
-        }
-        removeInternetChange(networkChange)
-    }
-    fun addInternetChange(callback: CallBackResult) {
+    fun addInternetChange(callback: IInternetChange) {
         listenerInterNetChange.addInternetChange(callback)
     }
-    fun removeInternetChange(callback: CallBackResult) {
+    fun removeInternetChange(callback: IInternetChange) {
         listenerInterNetChange.removeInternetChange(callback)
     }
 }
