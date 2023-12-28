@@ -36,9 +36,18 @@ abstract class BaseFragmentDataBinding<T :ViewDataBinding,VM: BaseViewModel> :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        vm.message.observe(viewLifecycleOwner){
-            DialogUtils.showErrorDialog(requireActivity(),it)
+        vm.message.observe(viewLifecycleOwner) {message ->
+            DialogUtils.showErrorDialog(requireActivity(), message)
         }
     }
+//    override fun onStart() {
+//        super.onStart()
+//        (requireActivity() as MainActivity).registerInternetChange(this)
+//    }
+//    override fun onStop() {
+//        super.onStop()
+//        (requireActivity() as MainActivity).unregisterInternetChange()
+//    }
+
 }
 

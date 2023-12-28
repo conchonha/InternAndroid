@@ -6,6 +6,7 @@ import androidx.fragment.app.viewModels
 import com.example.learnnavigation.R
 import com.example.learnnavigation.ui.adapter.AnimImageAdapter
 import com.example.learnnavigation.databinding.FragmentScreenImageBinding
+import com.example.learnnavigation.ui.activity.MainActivity
 import com.example.learnnavigation.ui.viewmodel.ScreenImageViewModel
 import com.example.learnnavigation.utils.Const.HORIZONTAL_SPACE
 import com.example.learnnavigation.utils.Const.VERTICAL_SPACE
@@ -26,10 +27,14 @@ class FragmentScreenImage: BaseFragmentDataBinding<FragmentScreenImageBinding, S
                      HORIZONTAL_SPACE
                  )
              )
-             vm.drinks.observe(viewLifecycleOwner) { drinks ->
-                 adapter.setData(drinks)
+             vm.drinks.observe(viewLifecycleOwner) { drink ->
+                 adapter.setData(drink.drinks)
              }
-             vm.fetchDataFromApi(requireContext())
+             vm.fetchDataFromApi()
          }
+
+         (requireActivity() as MainActivity).registerInternetChange(this)
+         (requireActivity() as MainActivity).unregisterInternetChange()
+
      }
 }
