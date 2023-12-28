@@ -10,7 +10,6 @@ import com.example.learnnavigation.ui.viewmodel.RingViewModel
 import com.example.learnnavigation.utils.Const.HORIZONTAL_SPACE
 import com.example.learnnavigation.utils.Const.VERTICAL_SPACE
 import com.example.learnnavigation.utils.ItemSpacingDecoration
-
 class FragmentRing : BaseFragmentDataBinding<FragmentRingBinding,RingViewModel>() {
     override val vm: RingViewModel   by viewModels()
 
@@ -21,17 +20,18 @@ class FragmentRing : BaseFragmentDataBinding<FragmentRingBinding,RingViewModel>(
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
             recycleViewChartFragment.adapter = adapter
-            recycleViewChartFragment. addItemDecoration(
+            recycleViewChartFragment.addItemDecoration(
                 ItemSpacingDecoration(
                     VERTICAL_SPACE,
                     HORIZONTAL_SPACE
                 )
             )
-            vm.drinks.observe(viewLifecycleOwner) { drinks ->
-                adapter.setData(drinks)
+            vm.drinks.observe(viewLifecycleOwner) { drink ->
+                adapter.setData(drink.drinks)
             }
-            vm.fetchDataFromApi(requireContext())
+            vm.fetchDataFromApi()
         }
+
     }
 }
 

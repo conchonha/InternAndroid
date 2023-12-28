@@ -19,7 +19,6 @@ class FragmentAnimImage  : BaseFragmentDataBinding<FragmentAnimationImageBinding
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         with(binding) {
             recycleViewChartFragment.adapter = adapter
             recycleViewChartFragment. addItemDecoration(
@@ -29,10 +28,12 @@ class FragmentAnimImage  : BaseFragmentDataBinding<FragmentAnimationImageBinding
                 )
             )
 
-            vm.drinks.observe(viewLifecycleOwner) { drinks ->
-                adapter.setData(drinks)
+            vm.drinks.observe(viewLifecycleOwner) { drink->
+                adapter.setData(drink.drinks)
             }
-            vm.fetchDataFromApi(requireContext())
+            vm.fetchDataFromApi()
+
+
         }
     }
 

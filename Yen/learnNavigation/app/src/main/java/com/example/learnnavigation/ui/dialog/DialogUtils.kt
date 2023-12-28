@@ -55,4 +55,12 @@ import com.example.learnnavigation.utils.SingleLiveEvent
             dialog?.dismiss()
         }
     }
+
+     fun inProgress(context: Context,isLoading: Boolean){
+         if (isLoading){
+             showLoadingDialog(context)
+         }else{
+             dismissLoadingDialog()
+         }
+     }
 }

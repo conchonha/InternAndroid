@@ -1,20 +1,17 @@
 package com.example.learnnavigation.ui.viewmodel
 
-import android.content.Context
+import com.example.learnnavigation.data.model.Drink
 import com.example.learnnavigation.data.remote.ApiService
-import com.example.learnnavigation.data.model.Drinks
 import com.example.learnnavigation.utils.SingleLiveEvent
 
 class RingViewModel : BaseViewModel() {
 
-    val drinks = SingleLiveEvent<List<Drinks>>()
+    val drinks = SingleLiveEvent<Drink>()
 
-    fun fetchDataFromApi(context: Context) {
+    fun fetchDataFromApi() {
         val apiService = ApiService.getService_2()
 
-        apiService.getGin().observe(context) {
-            this@RingViewModel.drinks.postValue(drinks)
-        }
+        apiService.getGin().enqueues(drinks)
     }
 }
 

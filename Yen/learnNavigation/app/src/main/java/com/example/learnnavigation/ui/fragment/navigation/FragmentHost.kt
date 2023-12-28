@@ -28,7 +28,6 @@ class FragmentHost : BaseFragmentDataBinding<FragmentHostBinding, HostViewModel>
         (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
         binding.viewPage2.isUserInputEnabled = false;
     }
-
     private fun setupViewPager() {
         with(viewPage2) {
             adapter = this@FragmentHost.adapter
@@ -50,7 +49,6 @@ class FragmentHost : BaseFragmentDataBinding<FragmentHostBinding, HostViewModel>
             })
         }
     }
-
     private fun setupBottomNavigationView() {
         binding.bottomNav.setOnItemSelectedListener { menuItem ->
             val currentItem = when (menuItem.itemId) {
@@ -64,6 +62,4 @@ class FragmentHost : BaseFragmentDataBinding<FragmentHostBinding, HostViewModel>
             true
         }
     }
-
-
 }
