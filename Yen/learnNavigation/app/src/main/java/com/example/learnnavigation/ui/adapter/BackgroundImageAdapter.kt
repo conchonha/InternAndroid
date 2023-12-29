@@ -19,7 +19,6 @@ class BackgroundImageAdapter : RecyclerView.Adapter<BackgroundImageAdapter.ViewH
         asyncListDiffer.submitList(data)
     }
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemsBackgroundImageFragmentBinding.inflate(
             LayoutInflater.from(parent.context),
@@ -45,7 +44,6 @@ class BackgroundImageAdapter : RecyclerView.Adapter<BackgroundImageAdapter.ViewH
             loadImage(binding.ivThumbnail, suggestedSearches.thumbnail)
         }
     }
-
     private class DiffCallback : DiffUtil.ItemCallback<SuggestedSearches>() {
         override fun areItemsTheSame(
             oldItem: SuggestedSearches,

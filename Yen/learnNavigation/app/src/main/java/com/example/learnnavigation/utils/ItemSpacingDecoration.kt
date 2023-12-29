@@ -4,7 +4,6 @@ import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
-
 class ItemSpacingDecoration(var horizontalSpacing: Float, var verticalSpacing: Float) :
     RecyclerView.ItemDecoration() {
 

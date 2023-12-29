@@ -9,15 +9,14 @@ import com.example.learnnavigation.databinding.FragmentBackgroundImageBinding
 import com.example.learnnavigation.ui.viewmodel.BackgroundImageViewModel
 import com.example.learnnavigation.utils.Const.HORIZONTAL_SPACE
 import com.example.learnnavigation.utils.Const.VERTICAL_SPACE
+import com.example.learnnavigation.utils.DialogUtils
 import com.example.learnnavigation.utils.ItemSpacingDecoration
-
 class FragmentBackgroundImage : BaseFragmentDataBinding<FragmentBackgroundImageBinding, BackgroundImageViewModel>() {
 
     override val layoutId: Int = R.layout.fragment_background_image
 
     override val vm: BackgroundImageViewModel by viewModels()
     private val adapter by lazy { BackgroundImageAdapter() }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -29,10 +28,14 @@ class FragmentBackgroundImage : BaseFragmentDataBinding<FragmentBackgroundImageB
                     HORIZONTAL_SPACE
                 )
             )
-            vm.suggestedSearches.observe(viewLifecycleOwner) { suggestedSearches ->
-                adapter.setData(suggestedSearches)
+            vm.suggestedSearches.observe(viewLifecycleOwner) { Demo ->
+                adapter.setData(Demo.suggestedSearches)
             }
-            vm.fetchDataFromApi(requireContext())
+            vm.fetchDataFromApi()
         }
+    }
+
+    override fun onInternetChange(isNetWork: Boolean) {
+
     }
 }

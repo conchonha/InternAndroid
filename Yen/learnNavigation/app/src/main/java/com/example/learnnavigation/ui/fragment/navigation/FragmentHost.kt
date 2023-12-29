@@ -29,6 +29,9 @@ class FragmentHost : BaseFragmentDataBinding<FragmentHostBinding, HostViewModel>
         binding.viewPage2.isUserInputEnabled = false;
     }
 
+    override fun onInternetChange(isNetWork: Boolean) {
+    }
+
     private fun setupViewPager() {
         with(viewPage2) {
             adapter = this@FragmentHost.adapter
@@ -50,7 +53,6 @@ class FragmentHost : BaseFragmentDataBinding<FragmentHostBinding, HostViewModel>
             })
         }
     }
-
     private fun setupBottomNavigationView() {
         binding.bottomNav.setOnItemSelectedListener { menuItem ->
             val currentItem = when (menuItem.itemId) {
@@ -64,6 +66,4 @@ class FragmentHost : BaseFragmentDataBinding<FragmentHostBinding, HostViewModel>
             true
         }
     }
-
-
 }

@@ -19,7 +19,6 @@ class AnimImageAdapter : RecyclerView.Adapter<AnimImageAdapter.ViewHolder>() {
         asyncListDiffer.submitList(data)
     }
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemsBackgroundImageFragmentBinding.inflate(
             LayoutInflater.from(parent.context),
@@ -53,7 +52,6 @@ class AnimImageAdapter : RecyclerView.Adapter<AnimImageAdapter.ViewHolder>() {
         ): Boolean {
             return oldItem.strDrink == newItem.strDrink
         }
-
         override fun areContentsTheSame(
             oldItem: Drinks,
             newItem: Drinks

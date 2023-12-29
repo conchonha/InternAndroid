@@ -9,6 +9,7 @@ import com.example.learnnavigation.databinding.FragmentScreenImageBinding
 import com.example.learnnavigation.ui.viewmodel.ScreenImageViewModel
 import com.example.learnnavigation.utils.Const.HORIZONTAL_SPACE
 import com.example.learnnavigation.utils.Const.VERTICAL_SPACE
+import com.example.learnnavigation.utils.DialogUtils
 import com.example.learnnavigation.utils.ItemSpacingDecoration
 
 class FragmentScreenImage: BaseFragmentDataBinding<FragmentScreenImageBinding, ScreenImageViewModel>() {
@@ -26,10 +27,14 @@ class FragmentScreenImage: BaseFragmentDataBinding<FragmentScreenImageBinding, S
                      HORIZONTAL_SPACE
                  )
              )
-             vm.drinks.observe(viewLifecycleOwner) { drinks ->
-                 adapter.setData(drinks)
+             vm.drinks.observe(viewLifecycleOwner) { drink ->
+                 adapter.setData(drink.drinks)
              }
-             vm.fetchDataFromApi(requireContext())
+             vm.fetchDataFromApi()
          }
      }
+
+    override fun onInternetChange(isNetWork: Boolean) {
+
+    }
 }
