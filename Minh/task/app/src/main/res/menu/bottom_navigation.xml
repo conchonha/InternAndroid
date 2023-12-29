@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_callFragment"
+        android:icon="@drawable/ic_call"
+        android:title="@string/ring_tone" />
+    <item
+        android:id="@+id/menu_imageFragment"
+        android:icon="@drawable/ic_image"
+        android:title="@string/bg_image" />
+    <item
+        android:id="@+id/menu_gifFragment"
+        android:icon="@drawable/ic_gif"
+        android:title="@string/animation" />
+    <item
+        android:id="@+id/menu_screenFragment"
+        android:icon="@drawable/ic_screen"
+        android:title="@string/screen" />
+</menu>
