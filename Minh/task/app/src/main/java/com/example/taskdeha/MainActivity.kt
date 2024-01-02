@@ -4,6 +4,7 @@ package com.example.taskdeha
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.taskdeha.databinding.ActivityMainBinding
 import com.example.taskdeha.utils.DialogUtils
@@ -22,20 +23,15 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//        MySharedPreferences.init(this)
-//
-//        if (isFirstLaunch()) {
-//
-//            setFirstLaunch(false)
-//        } else {
-//            val navHostFragment =
-//                supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-//            navHostFragment.navController
-//
-//        }
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-        navHostFragment.navController
+        MySharedPreferences.init(this)
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
+        if (isFirstLaunch()) {
+            navController.navigate(R.id.fragmentLanguage)
+            setFirstLaunch(false)
+        } else {
+            navController.navigate(R.id.fragmentMenu)
+        }
         DialogUtils.isLoadingDialog.observe(this) { isLoading ->
             inProgress(this, isLoading)
         }

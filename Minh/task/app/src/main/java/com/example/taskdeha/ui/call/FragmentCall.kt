@@ -23,6 +23,7 @@ class FragmentCall : BaseFragment<FragmentCallBinding, CallViewModel>() {
     private lateinit var adapter: ItemAdapter
     private lateinit var adapter2: ItemAdapter
     val revenueMonth: MutableList<Long> = mutableListOf()
+    var dialog=CustomDialog()
 
     //    private val adapter by lazy { ItemAdapter() }
 
@@ -53,24 +54,20 @@ class FragmentCall : BaseFragment<FragmentCallBinding, CallViewModel>() {
     }
 
     override fun onInternetChange(isNetWork: Boolean) {
-        val dialog = CustomDialog()
-        if (dialog.isVisible && dialog.isAdded) {
-            Toast.makeText(context, "HELLO", Toast.LENGTH_SHORT).show()
-            Log.d("HELO", "sfđs")
+        if (dialog.isVisible) {
+            dialog.dismiss()
+            dialog = CustomDialog()
         }
         if (isNetWork) {
-//            val dialog = CustomDialog()
             dialog.dialogData = DialogData(isShow = true, message = "Đã kết nối mạng")
-            Toast.makeText(context, "Đã có kết nối mạnggg", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(context, "Đã có kết nối mạnggg", Toast.LENGTH_SHORT).show()
         } else {
 
             dialog.dialogData = DialogData(isShow = false, message = "Đã ngắt kết nối mạng")
-
-            Toast.makeText(context, "Mất kết nối mạnggg", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(context, "Mất kết nối mạnggg", Toast.LENGTH_SHORT).show()
         }
         dialog.show(parentFragmentManager, "")
     }
-
     private fun initViewModel() {
         viewModel.metaData.observe(viewLifecycleOwner) { meta ->
             adapter.updateData(meta.suggestedSearches)

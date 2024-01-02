@@ -3,9 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/fragmentMenu">
+    app:startDestination="@id/fragmentLanguage">
     <fragment
         android:id="@+id/fragmentMenu"
         android:name="com.example.taskdeha.ui.FragmentMenu"
         android:label="FragmentMenu" />
+    <fragment
+        android:id="@+id/fragmentLanguage"
+        android:name="com.example.taskdeha.ui.language.FragmentLanguage"
+        android:label="FragmentLanguage" >
+        <action
+            android:id="@+id/action_fragmentLanguage_to_fragmentMenu"
+            app:destination="@id/fragmentMenu"/>
+    </fragment>
 </navigation>

@@ -8,12 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.taskdeha.data.model.Language
 import com.example.taskdeha.databinding.ItemLanguageBinding
 import com.example.taskdeha.extension.load
+import com.example.taskdeha.extension.loadDrawable
 import com.example.taskdeha.utils.DiffCallback
 
 class LanguageAdapter : RecyclerView.Adapter<LanguageAdapter.ViewHolder>() {
     private var list: MutableList<Language> = mutableListOf()
     private val asyncListDiffer = AsyncListDiffer(this, DiffCallback())
     private var onItemClickListener: OnItemClickListener? = null
+    private var selectedPosition = RecyclerView.NO_POSITION
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LanguageAdapter.ViewHolder {
         val binding =
             ItemLanguageBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -28,15 +30,15 @@ class LanguageAdapter : RecyclerView.Adapter<LanguageAdapter.ViewHolder>() {
 
     }
 
-    override fun onBindViewHolder(holder: LanguageAdapter.ViewHolder, position: Int) {
-        holder.bind(list.getOrNull(position) ?: return)
-    }
-
     fun setOnItemClickListener(listener: OnItemClickListener) {
         onItemClickListener = listener
     }
 
     fun getLanguage(position: Int): Language = list[position]
+    override fun onBindViewHolder(holder: LanguageAdapter.ViewHolder, position: Int) {
+        holder.bind(list.getOrNull(position) ?: return)
+    }
+
     override fun getItemCount(): Int =
         if (asyncListDiffer.currentList.size > 0) asyncListDiffer.currentList.size else list.size
 
@@ -47,17 +49,21 @@ class LanguageAdapter : RecyclerView.Adapter<LanguageAdapter.ViewHolder>() {
 //                Glide.with(binding.root)
 //                    .load(suggestedSearches.thumbnail)
 //                    .centerCrop().into(binding.ivData)
-                language.image?.let { thumbnail -> ivFlag.load(thumbnail) }
+                language.image?.let { thumbnail -> ivFlag.loadDrawable(thumbnail) }
                 language.nameLanguage?.let {
                     tvLanguage.text = it
                 }
-                constrainLanguage.setOnClickListener {
-                    rbLanguage.isChecked = true
+
+                rbLanguage.isChecked = adapterPosition == selectedPosition
+
+                // Set a click listener for the RadioButton
+                rbLanguage.setOnClickListener {
                     val position = adapterPosition
                     if (position != RecyclerView.NO_POSITION) {
+                        notifyItemChanged(selectedPosition)
+                        selectedPosition = position
                         onItemClickListener?.onItemClick(position)
                     }
-
                 }
             }
         }

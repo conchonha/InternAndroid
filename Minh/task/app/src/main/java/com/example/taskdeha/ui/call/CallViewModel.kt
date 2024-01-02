@@ -23,11 +23,9 @@ class CallViewModel : BaseViewModel() {
 
     fun getData() {
         dataRepository.getData().enqueue(metaData)
-        Log.d("sdf", "Fd")
     }
     val product = MutableLiveData<Products>()
     fun getProduct() {
-        Log.d("HELO", product.toString())
         productRepository.getProduct().enqueue(product)
     }
 }
