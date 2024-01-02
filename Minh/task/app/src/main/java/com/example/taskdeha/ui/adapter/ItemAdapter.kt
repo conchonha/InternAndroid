@@ -3,6 +3,7 @@ package com.example.taskdeha.ui.adapter
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.RecyclerView
 import com.example.taskdeha.data.model.SuggestedSearches
@@ -11,10 +12,27 @@ import com.example.taskdeha.databinding.ItemDataBinding
 import com.example.taskdeha.extension.load
 import com.example.taskdeha.utils.DiffCallback
 
+
+abstract class Base<VH: RecyclerView.ViewHolder, T>: RecyclerView.Adapter<VH>(){
+    private val asyncListDiffer = AsyncListDiffer(this, DiffCallback<T>())
+
+    fun updateData(data: List<T>?) {
+        asyncListDiffer.submitList(data)
+    }
+
+    override fun getItemCount(): Int = asyncListDiffer.currentList.size
+
+
+}
+
+abstract class CreateViewHolder<VB: ViewDataBinding>(val binding: VB): RecyclerView.ViewHolder(binding.root){
+    abstract fun bind(position: Int)
+}
+
 class ItemAdapter : RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
     //    private var list: MutableList<SuggestedSearches> = mutableListOf()
     private var list: MutableList<Product> = mutableListOf()
-    private val asyncListDiffer = AsyncListDiffer(this, DiffCallback())
+    private val asyncListDiffer = AsyncListDiffer(this, DiffCallback<Product>())
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemAdapter.ViewHolder {
         val binding = ItemDataBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
@@ -28,7 +46,7 @@ class ItemAdapter : RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
 
     }
 
-    fun updateData(data: List<SuggestedSearches>) {
+    fun updateData(data: List<SuggestedSearches>?) {
         asyncListDiffer.submitList(data)
     }
 

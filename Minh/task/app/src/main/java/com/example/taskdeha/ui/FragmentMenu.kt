@@ -26,33 +26,10 @@ class FragmentMenu : Fragment() {
         val adapter = ViewPager2(requireActivity())
         with(binding) {
             viewpager.adapter = adapter
-//            viewpager.offscreenPageLimit = 4
             binding.viewpager.isUserInputEnabled = false
-            viewpager.registerOnPageChangeCallback(object :
-                androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback() {
-                override fun onPageSelected(position: Int) {
-                    super.onPageSelected(position)
-                    when (position) {
-                        Const.INDEX_0 -> bottomNav.menu.findItem(R.id.menu_callFragment).isChecked =
-                            true
-                        Const.INDEX_1 -> bottomNav.menu.findItem(R.id.menu_imageFragment).isChecked =
-                            true
-                        Const.INDEX_2 -> bottomNav.menu.findItem(R.id.menu_gifFragment).isChecked =
-                            true
-                        Const.INDEX_3 -> bottomNav.menu.findItem(R.id.menu_screenFragment).isChecked =
-                            true
-                    }
-                }
-            })
+
             bottomNav.setOnNavigationItemSelectedListener { item ->
-                val position = when (item.itemId) {
-                    R.id.menu_callFragment -> Const.INDEX_0
-                    R.id.menu_imageFragment -> Const.INDEX_1
-                    R.id.menu_gifFragment -> Const.INDEX_2
-//                    R.id.screenFragment -> viewpager.currentItem = 3
-                    else -> Const.INDEX_3
-                }
-                viewpager.currentItem = position
+                viewpager.setCurrentItem(adapter.convertPositionTabFromMenuId(item.itemId),false)
                 false
             }
         }

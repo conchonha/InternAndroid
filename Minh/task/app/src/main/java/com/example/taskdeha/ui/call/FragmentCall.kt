@@ -53,21 +53,7 @@ class FragmentCall : BaseFragment<FragmentCallBinding, CallViewModel>() {
         requireActivity() as MainActivity
     }
 
-    override fun onInternetChange(isNetWork: Boolean) {
-        if (dialog.isVisible) {
-            dialog.dismiss()
-            dialog = CustomDialog()
-        }
-        if (isNetWork) {
-            dialog.dialogData = DialogData(isShow = true, message = "Đã kết nối mạng")
-//            Toast.makeText(context, "Đã có kết nối mạnggg", Toast.LENGTH_SHORT).show()
-        } else {
 
-            dialog.dialogData = DialogData(isShow = false, message = "Đã ngắt kết nối mạng")
-//            Toast.makeText(context, "Mất kết nối mạnggg", Toast.LENGTH_SHORT).show()
-        }
-        dialog.show(parentFragmentManager, "")
-    }
     private fun initViewModel() {
         viewModel.metaData.observe(viewLifecycleOwner) { meta ->
             adapter.updateData(meta.suggestedSearches)
