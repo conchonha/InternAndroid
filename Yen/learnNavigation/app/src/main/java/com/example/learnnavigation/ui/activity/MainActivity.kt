@@ -19,6 +19,7 @@ import com.example.learnnavigation.ui.viewmodel.ShareViewModel
 import com.example.learnnavigation.utils.DialogUtils.inProgress
 import com.example.learnnavigation.utils.DialogUtils.isLoadingDialog
 import com.example.learnnavigation.utils.LocaleHelper
+import com.example.learnnavigation.utils.LocaleManager
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
@@ -28,6 +29,14 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private val listenerInterNetChange by lazy { CustomLifecycle() }
 
+    override fun attachBaseContext(newBase: Context) {
+        if (SharePrefs.get("") != null){
+            return super.attachBaseContext(LocaleManager.updateResources(newBase,"VI"))
+        }
+
+        return super.attachBaseContext(newBase)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -35,15 +44,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
         lifecycle.addObserver(listenerInterNetChange)
         selectLanguage()
+
         isLoadingDialog.observe(this){isLoading->
             inProgress(this,isLoading)
         }
 
-//        shareViewModel.shareFlow.onEach {
-//            when(it){
-//                EventToolbar.OpenSearch ->
-//            }
-//        }.launchIn(lifecycleScope)
+        shareViewModel.shareFlow.onEach {
+           handleEventToolBar(it)
+        }.launchIn(lifecycleScope)
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_toolbar, menu)

@@ -11,6 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.learnnavigation.R
 import com.example.learnnavigation.data.model.languageCountry
 import com.example.learnnavigation.databinding.FragmentChangeLanguageBinding
+import com.example.learnnavigation.ui.adapter.CallBackVoid
+import com.example.learnnavigation.ui.adapter.IActionClick
+import com.example.learnnavigation.ui.adapter.LanguageAdapter
 import com.example.learnnavigation.ui.adapter.LanguageCountryAdapter
 import com.example.learnnavigation.ui.viewmodel.BackgroundImageViewModel
 import com.example.learnnavigation.ui.viewmodel.EventToolbar
@@ -25,30 +28,29 @@ class FragmentChangeLanguage :
     private val shareViewModel: ShareViewModel by activityViewModels()
 
     val languages = listOf(
-        languageCountry(R.drawable.ic_japanflag, "Japanese"),
-        languageCountry(R.drawable.ic_chinaflag, "China"),
-        languageCountry(R.drawable.ic_franceflag, "France"),
-        languageCountry(R.drawable.ic_englishflag, "English"),
-        languageCountry(R.drawable.ic_spanshflag, "Spanish"),
-        languageCountry(R.drawable.ic_indianflag, "Indian"),
-        languageCountry(R.drawable.ic_koreaflag, "Korean")
+        languageCountry(R.drawable.ic_japanflag, "Japanese",R.string.const_japan),
+        languageCountry(R.drawable.ic_chinaflag, "China",R.string.const_japan),
+        languageCountry(R.drawable.ic_franceflag, "France",R.string.const_japan),
+        languageCountry(R.drawable.ic_englishflag, "English",R.string.const_japan),
+        languageCountry(R.drawable.ic_spanshflag, "Spanish",R.string.const_japan),
+        languageCountry(R.drawable.ic_indianflag, "Indian",R.string.const_japan),
+        languageCountry(R.drawable.ic_koreaflag, "Korean",R.string.const_japan)
     )
-    private var isLanguageSelected = false
-    private var isLanguageName:String?=null
+
 
     private val adapter by lazy {
-        LanguageCountryAdapter(
-            languages
-        ) { languageName ->
-            isLanguageName = languageName
-        }
+//        LanguageCountryAdapter(
+//            languages
+//        ) { languageName ->
+//            isLanguageName = languageName
+//        }
+        LanguageAdapter(vm)
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         shareViewModel.chanEvent(EventToolbar.OpenSearch)
 
         with(binding) {
-            recycleViewChartFragment.layoutManager = LinearLayoutManager(requireContext())
             recycleViewChartFragment.adapter = adapter
 
             ivChoosingLanguage.setOnClickListener {
@@ -56,8 +58,6 @@ class FragmentChangeLanguage :
             }
         }
     }
-
-    override fun onInternetChange(isNetWork: Boolean) {}
 
     private fun handleLanguageSelected() {
         if(isLanguageName != null){

@@ -12,14 +12,28 @@ class DialogYesNoOption : BaseDialogFrament<DialogYesNoOptionBinding>() {
     override val layoutId: Int = R.layout.dialog_yes_no_option
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        updateUi()
 
+        with(binding){
+            btContinue.setOnClickListener {
+                dismiss()
+            }
+
+            btCancel.setOnClickListener {
+                dismiss()
+            }
+        }
+
+    }
+
+    fun updateUi(){
         when (dialogData.isLoading) {
-           false -> {
-               with(binding){
-                   tvTitle.setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
-                   tvTitle.text = getString(R.string.TitleIncorrectDialog)
-                   ivDialog.setImageResource(R.drawable.ic_cancel)
-               }
+            false -> {
+                with(binding){
+                    tvTitle.setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
+                    tvTitle.text = getString(R.string.TitleIncorrectDialog)
+                    ivDialog.setImageResource(R.drawable.ic_cancel)
+                }
 
             }
             true -> {
@@ -29,9 +43,6 @@ class DialogYesNoOption : BaseDialogFrament<DialogYesNoOptionBinding>() {
                     ivDialog.setImageResource(R.drawable.ic_done)
                 }
             }
-        }
-        binding.btContinue.setOnClickListener {
-            dialog?.dismiss()
         }
     }
 }

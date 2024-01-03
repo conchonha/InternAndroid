@@ -1,4 +1,7 @@
 <resources>
+    <string name="const_japan" translatable="false">jp</string>
+
+
     <string name="app_name">learnNavigation</string>
     <string name="Ring">Ringtone</string>
     <string name="BgImage">Wallpaper</string>
