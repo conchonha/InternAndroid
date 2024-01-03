@@ -1,9 +1,12 @@
 package com.example.taskdeha.ui.language
 
-
+import android.content.res.Configuration
+import android.content.res.Resources
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.core.app.ActivityCompat.recreate
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.taskdeha.R
@@ -14,7 +17,9 @@ import com.example.taskdeha.databinding.FragmentLanguageBinding
 import com.example.taskdeha.ui.adapter.LanguageAdapter
 import com.example.taskdeha.ui.adapter.OnItemClickListener
 import com.example.taskdeha.utils.CustomDialog
-
+import com.example.taskdeha.utils.DialogUtils
+import com.example.taskdeha.utils.MySharedPreferences
+import java.util.*
 
 class FragmentLanguage : BaseFragment<FragmentLanguageBinding, LanguageViewModel>() {
     override val layoutId: Int = R.layout.fragment_language
@@ -22,20 +27,39 @@ class FragmentLanguage : BaseFragment<FragmentLanguageBinding, LanguageViewModel
     private var language = Language()
     var dialog = CustomDialog()
 
-    override fun onInternetChange(isNetWork: Boolean) {
-        if (dialog.isVisible) {
-            dialog.dismiss()
-            dialog = CustomDialog()
+    companion object {
+        fun getListLanguage(resources: Resources): List<Language> {
+            return listOf<Language>(
+                Language(
+                    R.drawable.ic_flag_united_kingdom,
+                    resources.getString(R.string.language_english)
+                ),
+                Language(
+                    R.drawable.ic_flag_spain,
+                    resources.getString(R.string.language_spain)
+                ),
+                Language(
+                    R.drawable.ic_flag_portugal,
+                    resources.getString(R.string.language_portugal)
+                ),
+                Language(
+                    R.drawable.ic_flag_india,
+                    resources.getString(R.string.language_hindi)
+                ),
+                Language(
+                    R.drawable.ic_flag_germany,
+                    resources.getString(R.string.language_germany)
+                ),
+                Language(
+                    R.drawable.ic_flag_france,
+                    resources.getString(R.string.language_france)
+                ),
+                Language(
+                    R.drawable.ic_flag_china,
+                    resources.getString(R.string.language_china)
+                )
+            )
         }
-        if (isNetWork) {
-            dialog.dialogData = DialogData(isShow = true, message = "Đã kết nối mạng")
-//            Toast.makeText(context, "Đã có kết nối mạnggg", Toast.LENGTH_SHORT).show()
-        } else {
-
-            dialog.dialogData = DialogData(isShow = false, message = "Đã ngắt kết nối mạng")
-//            Toast.makeText(context, "Mất kết nối mạnggg", Toast.LENGTH_SHORT).show()
-        }
-        dialog.show(parentFragmentManager, "")
     }
 
     override val viewModel: LanguageViewModel by viewModels()
@@ -43,36 +67,7 @@ class FragmentLanguage : BaseFragment<FragmentLanguageBinding, LanguageViewModel
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         adapter = LanguageAdapter()
-        val listLanguage = listOf<Language>(
-            Language(
-                R.drawable.ic_flag_united_kingdom,
-                resources.getString(R.string.language_english)
-            ),
-            Language(
-                R.drawable.ic_flag_united_kingdom,
-                resources.getString(R.string.language_spain)
-            ),
-            Language(
-                R.drawable.ic_flag_portugal,
-                resources.getString(R.string.language_portugal)
-            ),
-            Language(
-                R.drawable.ic_flag_india,
-                resources.getString(R.string.language_hindi)
-            ),
-            Language(
-                R.drawable.ic_flag_germany,
-                resources.getString(R.string.language_germany)
-            ),
-            Language(
-                R.drawable.ic_flag_france,
-                resources.getString(R.string.language_france)
-            ),
-            Language(
-                R.drawable.ic_flag_china,
-                resources.getString(R.string.language_china)
-            )
-        )
+        val listLanguage = getListLanguage(resources)
         adapter.setData(listLanguage)
         with(binding) {
             recyclerviewLanguage.adapter = adapter
@@ -80,12 +75,28 @@ class FragmentLanguage : BaseFragment<FragmentLanguageBinding, LanguageViewModel
                 if (language.nameLanguage != null) {
                     Toast.makeText(
                         context,
-                        language.nameLanguage.toString(),
+                        language.nameLanguage,
                         Toast.LENGTH_SHORT
                     ).show()
+                    language.nameLanguage?.let { languageName ->
+                        var languageCode=""
+                        when (languageName.lowercase()) {
+                            "spain" -> languageCode = "es"
+                            "hindi" -> languageCode = "hi"
+                            "portugal" -> languageCode = "pt"
+                            "france" -> languageCode = "fr"
+                            "china" -> languageCode = "zh"
+                            "germany" -> languageCode = "de"
+                            "english" -> languageCode = "en"
+                        }
+                        Log.d("LanguageCode", languageCode)
+                        setLocale(languageCode)
+                    }
+                    setFirstLaunch(false)
                     findNavController().navigate(R.id.action_fragmentLanguage_to_fragmentMenu)
                 } else {
-                    Toast.makeText(context, "Please select a language!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Please select a language!", Toast.LENGTH_SHORT)
+                        .show()
                 }
             }
         }
@@ -95,4 +106,24 @@ class FragmentLanguage : BaseFragment<FragmentLanguageBinding, LanguageViewModel
             }
         })
     }
+
+    private fun setLocale(languageCode: String) {
+        val locale = Locale(languageCode)
+        Locale.setDefault(locale)
+
+        val configuration = Configuration()
+        configuration.setLocale(locale)
+
+        // Áp dụng ngôn ngữ mới cho ứng dụng
+        resources.updateConfiguration(configuration, resources.displayMetrics)
+
+        // Re-create activity để cập nhật giao diện với ngôn ngữ mới
+        activity?.recreate()
+    }
+
+    private fun setFirstLaunch(isFirstTime: Boolean) {
+        MySharedPreferences.putBoolean("firstLaunch", isFirstTime)
+    }
 }
+
+

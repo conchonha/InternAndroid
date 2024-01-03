@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.content.Context
 import android.app.Dialog
 import android.util.Log
+import android.widget.Toast
 import com.example.taskdeha.R
 
 object DialogUtils {
@@ -18,24 +19,16 @@ object DialogUtils {
 
     val isLoadingDialog = SingleLiveEvent<Boolean>()
 
-    //  fun changeStateLoading(isLoading: Boolean){}
     fun showLoadingDialog(context: Context) {
-//        if (countApi == 0) {
-//            dialog = Dialog(context, R.style.CustomAlertDialogTheme).apply {
-//                setContentView(R.layout.loading)
-////                window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-//                setCancelable(false)
-//            }
-//            dialog?.show()
-//        }
-//        countApi++
-//        Log.d("LoadingDialog", "showLoadingDialog: $countApi")
-        dialog = Dialog(context, R.style.CustomAlertDialogTheme).apply {
-            setContentView(R.layout.loading)
-//                window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-            setCancelable(false)
+        if (countApi == 0) {
+            dialog = Dialog(context, R.style.CustomAlertDialogTheme).apply {
+                setContentView(R.layout.loading)
+                setCancelable(false)
+            }
+            dialog?.show()
         }
-        dialog?.show()
+        countApi++
+        Log.d("LoadingDialog", "showLoadingDialog: $countApi")
     }
 
     fun showErrorDialog(context: Context, message: String) {
@@ -45,7 +38,7 @@ object DialogUtils {
                 .setMessage(message)
                 .setCancelable(false)
                 .setPositiveButton(android.R.string.ok) { _, _ ->
-//                    countApi = 0
+                    countApi = 0
                     alert = null
                 }
                 .create()
@@ -54,12 +47,11 @@ object DialogUtils {
     }
 
     fun dismissLoadingDialog() {
-//        countApi--
-//        if (countApi <= 0) {
-//            countApi = 0
-//            dialog?.dismiss()
-//        }
-        dialog?.dismiss()
+        countApi--
+        if (countApi <= 0) {
+            countApi = 0
+            dialog?.dismiss()
+        }
     }
 
     fun dimissAlert() {
@@ -73,5 +65,9 @@ object DialogUtils {
         } else {
             dismissLoadingDialog()
         }
+    }
+
+    fun showToast(res: String, context: Context) {
+        Toast.makeText(context, res, Toast.LENGTH_SHORT).show()
     }
 }

@@ -14,7 +14,7 @@ class CustomDialog : BaseDialogFragment<LayoutDialogBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.tvMessage.text=dialogData.message
-        when (dialogData.isShow) {
+        when (dialogData.isSuccess) {
             false -> {
                 with(binding) {
                     tvTitle.setTextColor(ContextCompat.getColor(requireContext(), R.color.red))

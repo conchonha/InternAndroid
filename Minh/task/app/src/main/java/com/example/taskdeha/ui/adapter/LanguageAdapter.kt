@@ -7,13 +7,12 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.RecyclerView
 import com.example.taskdeha.data.model.Language
 import com.example.taskdeha.databinding.ItemLanguageBinding
-import com.example.taskdeha.extension.load
 import com.example.taskdeha.extension.loadDrawable
 import com.example.taskdeha.utils.DiffCallback
 
 class LanguageAdapter : RecyclerView.Adapter<LanguageAdapter.ViewHolder>() {
     private var list: MutableList<Language> = mutableListOf()
-    private val asyncListDiffer = AsyncListDiffer(this, DiffCallback())
+    private val asyncListDiffer = AsyncListDiffer(this, DiffCallback<Language>())
     private var onItemClickListener: OnItemClickListener? = null
     private var selectedPosition = RecyclerView.NO_POSITION
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LanguageAdapter.ViewHolder {
@@ -27,7 +26,6 @@ class LanguageAdapter : RecyclerView.Adapter<LanguageAdapter.ViewHolder>() {
         list.clear()
         list.addAll(product)
         notifyDataSetChanged()
-
     }
 
     fun setOnItemClickListener(listener: OnItemClickListener) {
@@ -46,17 +44,11 @@ class LanguageAdapter : RecyclerView.Adapter<LanguageAdapter.ViewHolder>() {
         RecyclerView.ViewHolder(binding.root) {
         fun bind(language: Language) {
             with(binding) {
-//                Glide.with(binding.root)
-//                    .load(suggestedSearches.thumbnail)
-//                    .centerCrop().into(binding.ivData)
                 language.image?.let { thumbnail -> ivFlag.loadDrawable(thumbnail) }
                 language.nameLanguage?.let {
-                    tvLanguage.text = it
+                    tvLanguage.text = it.toString()
                 }
-
                 rbLanguage.isChecked = adapterPosition == selectedPosition
-
-                // Set a click listener for the RadioButton
                 rbLanguage.setOnClickListener {
                     val position = adapterPosition
                     if (position != RecyclerView.NO_POSITION) {

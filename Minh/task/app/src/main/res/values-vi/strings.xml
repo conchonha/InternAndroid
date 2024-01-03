@@ -3,17 +3,19 @@
     <string name="app_name">TaskDeha</string>
     <string name="ring_tone">Nhạc chuông</string>
     <string name="bg_image">Hình nền</string>
-    <string name="animation">Hình đồng</string>
+    <string name="animation">Hình động</string>
     <string name="screen">Màn hình</string>
     <string name="error">Lỗi!</string>
     <string name="wrong">Đã xảy ra lỗi!</string>
     <string name="done">Xong!</string>
     <string name="language">Ngôn ngữ</string>
-    <string name="language_china">Trung Quốc</string>
+    <string name="language_china">Tiếng Trung</string>
     <string name="language_english">Tiếng Anh</string>
-    <string name="language_spain">Tây Ban Nha</string>
+    <string name="language_spain">Tiếng Tây Ban Nha</string>
     <string name="language_portugal">Tiếng Bồ Đào Nha</string>
-    <string name="language_hindi">Ấn Độ</string>
-    <string name="language_germany">Đức</string>
-    <string name="language_france">Pháp</string>
+    <string name="language_hindi">Tiếng Hindi</string>
+    <string name="language_germany">Tiếng Đức</string>
+    <string name="language_france">Tiếng Pháp</string>
+    <string name="message_internet_connected">Đã kết nối mạng</string>
+    <string name="message_internet_disconnect">Đã ngắt kết nối mạng</string>
 </resources>

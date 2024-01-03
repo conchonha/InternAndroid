@@ -5,10 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.taskdeha.R
 import com.example.taskdeha.databinding.FragmentMenuBinding
 import com.example.taskdeha.ui.adapter.ViewPager2
-import com.example.taskdeha.utils.Const
 
 class FragmentMenu : Fragment() {
     private lateinit var binding: FragmentMenuBinding
@@ -26,34 +24,11 @@ class FragmentMenu : Fragment() {
         val adapter = ViewPager2(requireActivity())
         with(binding) {
             viewpager.adapter = adapter
-//            viewpager.offscreenPageLimit = 4
+            viewpager.offscreenPageLimit = 4
             binding.viewpager.isUserInputEnabled = false
-            viewpager.registerOnPageChangeCallback(object :
-                androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback() {
-                override fun onPageSelected(position: Int) {
-                    super.onPageSelected(position)
-                    when (position) {
-                        Const.INDEX_0 -> bottomNav.menu.findItem(R.id.menu_callFragment).isChecked =
-                            true
-                        Const.INDEX_1 -> bottomNav.menu.findItem(R.id.menu_imageFragment).isChecked =
-                            true
-                        Const.INDEX_2 -> bottomNav.menu.findItem(R.id.menu_gifFragment).isChecked =
-                            true
-                        Const.INDEX_3 -> bottomNav.menu.findItem(R.id.menu_screenFragment).isChecked =
-                            true
-                    }
-                }
-            })
             bottomNav.setOnNavigationItemSelectedListener { item ->
-                val position = when (item.itemId) {
-                    R.id.menu_callFragment -> Const.INDEX_0
-                    R.id.menu_imageFragment -> Const.INDEX_1
-                    R.id.menu_gifFragment -> Const.INDEX_2
-//                    R.id.screenFragment -> viewpager.currentItem = 3
-                    else -> Const.INDEX_3
-                }
-                viewpager.currentItem = position
-                false
+                viewpager.setCurrentItem(adapter.convertPositionTabFromMenuId(item.itemId),false)
+                true
             }
         }
     }
