@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TaskDeha</string>
+    <string name="bg_image">पृष्ठभूमि छवि</string>
+    <string name="animation">एनिमेशन</string>
+    <string name="screen">स्क्रीन</string>
+    <string name="error">गलती!</string>
+    <string name="ring_tone">अँगूठी</string>
+    <string name="wrong">त्रुटि! एक त्रुटि हुई है। कृपया बाद में दोबारा प्रयास करें!</string>
+    <string name="done">खत्म!</string>
+    <string name="language">भाषा</string>
+    <string name="language_china">चीनी</string>
+    <string name="language_english">अंग्रेज़ी</string>
+    <string name="language_spain">स्पैनिश</string>
+    <string name="language_portugal">पुर्तगाली</string>
+    <string name="language_hindi">हिंदी</string>
+    <string name="language_germany">जर्मन</string>
+    <string name="language_france">फ़्रेंच</string>
+    <string name="message_internet_connected">नेटवर्क कनेक्टेड</string>
+    <string name="message_internet_disconnect">नेटवर्क कनेक्शन काट दिया गया</string>
+</resources>

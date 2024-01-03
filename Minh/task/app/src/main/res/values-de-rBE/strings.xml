@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TaskDeha</string>
+    <string name="bg_image">Hintergrundbild</string>
+    <string name="animation">Animation</string>
+    <string name="screen">Bildschirm</string>
+    <string name="error">" Fehler!"</string>
+    <string name="ring_tone">Ring</string>
+    <string name="wrong">Ein Fehler ist aufgetreten!</string>
+    <string name="done">" Fertig!"</string>
+    <string name="language">Sprache</string>
+    <string name="language_china">Chinesisch</string>
+    <string name="language_english">Englisch</string>
+    <string name="language_spain">Spanisch</string>
+    <string name="language_portugal">Portugiesisch</string>
+    <string name="language_hindi">Hindi</string>
+    <string name="language_germany">Deutsch</string>
+    <string name="language_france">Französisch</string>
+    <string name="message_internet_connected">Netzwerk verbunden</string>
+    <string name="message_internet_disconnect">" Netzwerkverbindung getrennt"</string>
+</resources>
