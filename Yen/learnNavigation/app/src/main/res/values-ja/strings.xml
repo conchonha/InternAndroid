@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">learnNavigation</string>
+    <string name="Ring">着信音</string>
+    <string name="BgImage">壁紙</string>
+    <string name="AnimImage">アニメーション画像</string>
+    <string name="ScreenImage">画面</string>
+    <string name="error_title">错误API!</string>
+    <string name="search">検索</string>
+    <string name="crown">クラウン</string>
+    <string name="TitleCorrectDialog">よくやった</string>
+    <string name="MessageDialog">顧客サービスは重要です</string>
+    <string name="TitleIncorrectDialog">何か問題が発生しました</string>
+    <string name="cancle_dialog">キャンセル</string>
+    <string name="t_continue">続く</string>
+    <string name="language">言語</string>
+</resources>

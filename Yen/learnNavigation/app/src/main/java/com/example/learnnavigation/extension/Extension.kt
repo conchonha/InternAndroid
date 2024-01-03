@@ -1,8 +1,10 @@
 package com.example.learnnavigation.extension
 
+import android.content.Context
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
+import com.example.learnnavigation.utils.LocaleHelper
 
 class Extension {
     companion object {
@@ -16,5 +18,6 @@ class Extension {
             }
         }
     }
+
 
 }

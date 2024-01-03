@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">learnNavigation</string>
     <string name="Ring">Ringtone</string>
@@ -7,12 +8,10 @@
     <string name="error_title">Error API!</string>
     <string name="search">Search</string>
     <string name="crown">Crown</string>
-    <string name="TitleCorrectDialog" >Well done</string>
-    <string name="MessageDialog" >Lorem ipsum dolor sit amet, consectetur \n adipiscing elit, sed do eiusmod Lorem \n ipsum dolor sit amet</string>
+    <string name="TitleCorrectDialog">Well done</string>
+    <string name="MessageDialog">Lorem ipsum dolor sit amet, consectetur   adipiscing elit, sed do eiusmod Lorem   ipsum dolor sit amet</string>
     <string name="TitleIncorrectDialog">Something went wrong</string>
     <string name="cancle_dialog">Cancel</string>
     <string name="t_continue">Continue</string>
     <string name="language">Language</string>
-    <string name="japanese">Japanese</string>
-
 </resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">learnNavigation</string>
+    <string name="Ring">铃声</string>
+    <string name="BgImage">墙纸</string>
+    <string name="AnimImage">动画图像</string>
+    <string name="ScreenImage">屏幕</string>
+    <string name="error_title">错误API！</string>
+    <string name="search">搜索</string>
+    <string name="crown">王冠</string>
+    <string name="TitleCorrectDialog">做得好</string>
+    <string name="MessageDialog">客户服务很重要</string>
+    <string name="TitleIncorrectDialog">出了些问题</string>
+    <string name="cancle_dialog">取消</string>
+    <string name="t_continue">继续</string>
+    <string name="language">语言</string>
+</resources>

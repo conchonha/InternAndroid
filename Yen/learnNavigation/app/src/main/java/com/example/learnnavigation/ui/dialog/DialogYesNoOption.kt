@@ -30,6 +30,9 @@ class DialogYesNoOption : BaseDialogFrament<DialogYesNoOptionBinding>() {
                 }
             }
         }
+        binding.btContinue.setOnClickListener {
+            dialog?.dismiss()
+        }
     }
 }
 

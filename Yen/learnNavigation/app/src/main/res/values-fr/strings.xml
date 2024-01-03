@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">learnNavigation</string>
+    <string name="Ring">Sonnerie</string>
+    <string name="BgImage">Fond d\'écran</string>
+    <string name="AnimImage">Image animée</string>
+    <string name="ScreenImage">Écran</string>
+    <string name="error_title">Erreur API!</string>
+    <string name="search">Recherche</string>
+    <string name="crown">Couronne</string>
+    <string name="TitleCorrectDialog">Bien joué</string>
+    <string name="MessageDialog">Le service client est important</string>
+    <string name="TitleIncorrectDialog">Quelque chose s\'est mal passé</string>
+    <string name="cancle_dialog">Annuler</string>
+    <string name="t_continue">Continuer</string>
+    <string name="language">Langue</string>
+</resources>

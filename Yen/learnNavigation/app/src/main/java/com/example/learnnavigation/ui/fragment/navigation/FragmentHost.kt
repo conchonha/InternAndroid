@@ -18,17 +18,21 @@ import com.example.learnnavigation.ui.viewmodel.HostViewModel
 class FragmentHost : BaseFragmentDataBinding<FragmentHostBinding, HostViewModel>() {
     override val layoutId: Int = R.layout.fragment_host
     override val vm: HostViewModel by viewModels()
-
      private val adapter by lazy { ViewPage2Adapter(this) }
     private val viewPage2 by lazy { binding.viewPage2 }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupViewPager()
         setupBottomNavigationView()
-        (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        (requireActivity() as MainActivity).setSupportActionBar(binding.toolbar)
+        (requireActivity() as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
         binding.viewPage2.isUserInputEnabled = false;
+//        binding.bottomNav.setOnNavigationItemSelectedListener { item ->
+//            binding.viewPage2.setCurrentItem(adapter.convertPositionTabFromMenuId(item.itemId),false)
+//            true
+//        }
     }
-
     override fun onInternetChange(isNetWork: Boolean) {
     }
 
@@ -66,4 +70,6 @@ class FragmentHost : BaseFragmentDataBinding<FragmentHostBinding, HostViewModel>
             true
         }
     }
+
+
 }

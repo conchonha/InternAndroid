@@ -53,5 +53,6 @@ abstract class BaseFragmentDataBinding<T :ViewDataBinding,VM: BaseViewModel> :
             DialogUtils.showErrorDialog(requireActivity(), message)
         }
     }
+
 }
 
