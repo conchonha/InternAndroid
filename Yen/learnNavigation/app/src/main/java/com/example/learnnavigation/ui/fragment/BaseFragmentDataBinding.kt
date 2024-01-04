@@ -12,12 +12,15 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import com.example.learnnavigation.ui.IInternetChange
 import com.example.learnnavigation.ui.activity.MainActivity
+import com.example.learnnavigation.ui.dialog.DialogYesNoOption
+import com.example.learnnavigation.ui.dialog.model.DialogData
 import com.example.learnnavigation.utils.DialogUtils
 import com.example.learnnavigation.ui.viewmodel.BaseViewModel
 
 abstract class BaseFragmentDataBinding<T :ViewDataBinding,VM: BaseViewModel> :
     Fragment(), IInternetChange {
 
+    private val dialogYesNo by lazy {  DialogYesNoOption() }
     protected abstract val vm: VM
       lateinit var binding: T
 
@@ -51,6 +54,21 @@ abstract class BaseFragmentDataBinding<T :ViewDataBinding,VM: BaseViewModel> :
         super.onViewCreated(view, savedInstanceState)
         vm.message.observe(viewLifecycleOwner) {message ->
             DialogUtils.showErrorDialog(requireActivity(), message)
+        }
+    }
+
+    override fun onInternetChange(isNetWork: Boolean) {
+        if (!isNetWork) {
+            if (!dialogYesNo.isVisible && dialogYesNo.isDetached){
+                dialogYesNo.dialogData.isLoading = false
+                dialogYesNo.show(childFragmentManager,dialogYesNo.tag)
+            }
+            Log.d("Test", "is network")
+        } else {
+            dialogYesNo.dialogData.isLoading = true
+            if (dialogYesNo.isVisible){
+                dialogYesNo.updateUi()
+            }
         }
     }
 }

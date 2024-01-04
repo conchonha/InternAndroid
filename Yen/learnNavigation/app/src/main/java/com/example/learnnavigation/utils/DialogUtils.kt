@@ -54,7 +54,13 @@ object DialogUtils {
             dialog?.dismiss()
         }
     }
-
+//    fun dismissLoadingDialog(dialog: Dialog?) {
+//        dialog?.let {
+//            if (it.isShowing) {
+//                it.dismiss()
+//            }
+//        }
+//    }
      fun inProgress(context: Context,isLoading: Boolean){
          if (isLoading){
              showLoadingDialog(context)

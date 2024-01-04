@@ -40,7 +40,7 @@ class AnimImageAdapter : RecyclerView.Adapter<AnimImageAdapter.ViewHolder>() {
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(drinks: Drinks) {
-            binding.tvName.text = drinks.strDrink
+         //   binding.tvName.text = drinks.strDrink
             loadImage(binding.ivThumbnail, drinks.strDrinkThumb)
         }
     }

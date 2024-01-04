@@ -12,6 +12,7 @@ import com.example.learnnavigation.extension.Extension.Companion.loadImage
 class BackgroundImageAdapter : RecyclerView.Adapter<BackgroundImageAdapter.ViewHolder>() {
 
     private val asyncListDiffer = AsyncListDiffer(this, DiffCallback())
+
     val listItem: List<SuggestedSearches>
         get() = asyncListDiffer.currentList
 
@@ -40,7 +41,7 @@ class BackgroundImageAdapter : RecyclerView.Adapter<BackgroundImageAdapter.ViewH
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(suggestedSearches: SuggestedSearches) {
-            binding.tvName.text = suggestedSearches.name
+         //   binding.tvName.text = suggestedSearches.name
             loadImage(binding.ivThumbnail, suggestedSearches.thumbnail)
         }
     }

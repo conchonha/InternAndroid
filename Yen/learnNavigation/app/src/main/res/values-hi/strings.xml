@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">learnNavigation</string>
+    <string name="Ring">रिंगटोन</string>
+    <string name="BgImage">वॉलपेपर</string>
+    <string name="AnimImage">एनिमेटेड छवि</string>
+    <string name="ScreenImage">स्क्रीन</string>
+    <string name="error_title">त्रुटि एपीआई!</string>
+    <string name="search">खोज</string>
+    <string name="crown">ताज</string>
+    <string name="TitleCorrectDialog">बहुत अच्छा</string>
+    <string name="MessageDialog">ग्राहक सेवा महत्वपूर्ण है</string>
+    <string name="TitleIncorrectDialog">कुछ गलत हो गया</string>
+    <string name="cancle_dialog">रद्द करना</string>
+    <string name="t_continue">जारी रखना</string>
+    <string name="language">भाषा</string>
+</resources>

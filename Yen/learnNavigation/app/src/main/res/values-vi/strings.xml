@@ -13,4 +13,6 @@
     <string name="TitleCorrectDialog">Xong</string>
     <string name="cancle_dialog">Hủy</string>
     <string name="t_continue">Tiếp tục</string>
+    <string name="language">Ngôn ngữ</string>
+    <string name="japanese">tiếng Nhật</string>
 </resources>
