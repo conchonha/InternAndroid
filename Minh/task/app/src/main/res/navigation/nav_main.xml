@@ -13,7 +13,15 @@
         android:name="com.example.taskdeha.ui.language.FragmentLanguage"
         android:label="FragmentLanguage" >
         <action
-            android:id="@+id/action_fragmentLanguage_to_fragmentMenu"
-            app:destination="@id/fragmentMenu"/>
+            android:id="@+id/action_fragmentLanguage_to_fragmentOnboarding"
+            app:destination="@id/fragmentOnboarding" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentOnboarding"
+        android:name="com.example.taskdeha.ui.FragmentOnboarding"
+        android:label="FragmentOnboarding" >
+        <action
+            android:id="@+id/action_fragmentOnboarding_to_fragmentMenu"
+            app:destination="@id/fragmentMenu" />
     </fragment>
 </navigation>

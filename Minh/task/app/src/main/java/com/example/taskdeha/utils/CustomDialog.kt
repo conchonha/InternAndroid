@@ -14,6 +14,10 @@ class CustomDialog : BaseDialogFragment<LayoutDialogBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.tvMessage.text=dialogData.message
+       updateUI()
+    }
+
+     fun updateUI() {
         when (dialogData.isSuccess) {
             false -> {
                 with(binding) {

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">TaskDeha</string>
-    <string name="bg_image">Hintergrundbild</string>
+    <string name="image">Hintergrundbild</string>
     <string name="animation">Animation</string>
-    <string name="screen">Bildschirm</string>
+    <string name="call_image">Bildschirm</string>
     <string name="error">" Fehler!"</string>
     <string name="ring_tone">Ring</string>
     <string name="wrong">Ein Fehler ist aufgetreten!</string>
@@ -18,4 +18,9 @@
     <string name="language_france">Französisch</string>
     <string name="message_internet_connected">Netzwerk verbunden</string>
     <string name="message_internet_disconnect">" Netzwerkverbindung getrennt"</string>
+    <string name="skip">Überspringen</string>
+    <string name="ringtones">Klingeltonsammlung</string>
+    <string name="next">" Weitermachen"</string>
+    <string name="bg_image">" Hintergrundbild"</string>
+    <string name="bg_call">Hintergrundanruf</string>
 </resources>

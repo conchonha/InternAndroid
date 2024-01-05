@@ -23,6 +23,7 @@ abstract class BaseFragment<T : ViewDataBinding, VM : BaseViewModel> :
     Fragment(), IInternetChange {
     var isInternet: Boolean = true
     private var dialog = CustomDialog()
+    private var isState = false
     lateinit var binding: T
 
     abstract val viewModel: VM
@@ -59,16 +60,18 @@ abstract class BaseFragment<T : ViewDataBinding, VM : BaseViewModel> :
     }
 
     override fun onInternetChange(isNetWork: Boolean) {
-        if (dialog.isVisible) {
-            dialog.dismiss()
-            dialog = CustomDialog()
-        }
-        if (isNetWork) {
-            dialog.dialogData = DialogData(isSuccess = true, message = resources.getString(R.string.message_internet_connected))
-            DialogUtils.showToast(resources.getString(R.string.message_internet_connected), requireContext())
+        if (!isNetWork) {
+            if (!dialog.isShow) {
+                dialog.dialogData.isSuccess = false
+                dialog.show(childFragmentManager)
+                Log.d("Tesddt", "is network")
+            }
+
         } else {
-            dialog.dialogData = DialogData(isSuccess = false, message = resources.getString(R.string.message_internet_disconnect))
+            dialog.dialogData.isSuccess = true
+            if (dialog.isVisible) {
+                dialog.updateUI()
+            }
         }
-        dialog.show(childFragmentManager, "")
     }
 }

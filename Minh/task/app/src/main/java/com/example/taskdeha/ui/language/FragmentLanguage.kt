@@ -18,6 +18,7 @@ import com.example.taskdeha.ui.adapter.LanguageAdapter
 import com.example.taskdeha.ui.adapter.OnItemClickListener
 import com.example.taskdeha.utils.CustomDialog
 import com.example.taskdeha.utils.DialogUtils
+import com.example.taskdeha.utils.LocaleManager
 import com.example.taskdeha.utils.MySharedPreferences
 import java.util.*
 
@@ -32,31 +33,38 @@ class FragmentLanguage : BaseFragment<FragmentLanguageBinding, LanguageViewModel
             return listOf<Language>(
                 Language(
                     R.drawable.ic_flag_united_kingdom,
-                    resources.getString(R.string.language_english)
+                    resources.getString(R.string.language_english),
+                    R.string.const_eng
                 ),
                 Language(
                     R.drawable.ic_flag_spain,
-                    resources.getString(R.string.language_spain)
+                    resources.getString(R.string.language_spain),
+                    R.string.const_spain
                 ),
                 Language(
                     R.drawable.ic_flag_portugal,
-                    resources.getString(R.string.language_portugal)
+                    resources.getString(R.string.language_portugal),
+                    R.string.const_portugal
                 ),
                 Language(
                     R.drawable.ic_flag_india,
-                    resources.getString(R.string.language_hindi)
+                    resources.getString(R.string.language_hindi),
+                    R.string.const_india
                 ),
                 Language(
                     R.drawable.ic_flag_germany,
-                    resources.getString(R.string.language_germany)
+                    resources.getString(R.string.language_germany),
+                    R.string.const_germany
                 ),
                 Language(
                     R.drawable.ic_flag_france,
-                    resources.getString(R.string.language_france)
+                    resources.getString(R.string.language_france),
+                    R.string.const_france
                 ),
                 Language(
                     R.drawable.ic_flag_china,
-                    resources.getString(R.string.language_china)
+                    resources.getString(R.string.language_china),
+                    R.string.const_china
                 )
             )
         }
@@ -78,22 +86,15 @@ class FragmentLanguage : BaseFragment<FragmentLanguageBinding, LanguageViewModel
                         language.nameLanguage,
                         Toast.LENGTH_SHORT
                     ).show()
-                    language.nameLanguage?.let { languageName ->
-                        var languageCode=""
-                        when (languageName.lowercase()) {
-                            "spain" -> languageCode = "es"
-                            "hindi" -> languageCode = "hi"
-                            "portugal" -> languageCode = "pt"
-                            "france" -> languageCode = "fr"
-                            "china" -> languageCode = "zh"
-                            "germany" -> languageCode = "de"
-                            "english" -> languageCode = "en"
+                    language.locale?.let { languageLocale ->
+                        context?.getString(languageLocale)?.let { locale ->
+                            setLocale(locale)
+//                            LocaleManager.updateResources(requireContext(), locale)
+                            MySharedPreferences.putString("locale", locale)
                         }
-                        Log.d("LanguageCode", languageCode)
-                        setLocale(languageCode)
                     }
                     setFirstLaunch(false)
-                    findNavController().navigate(R.id.action_fragmentLanguage_to_fragmentMenu)
+                    findNavController().navigate(R.id.action_fragmentLanguage_to_fragmentOnboarding)
                 } else {
                     Toast.makeText(context, "Please select a language!", Toast.LENGTH_SHORT)
                         .show()

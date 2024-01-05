@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">TaskDeha</string>
-    <string name="bg_image">Imagen de fondo</string>
+    <string name="image">Imagen de fondo</string>
     <string name="animation">Animación</string>
-    <string name="screen">Pantalla</string>
+    <string name="call_image">Pantalla</string>
     <string name="error">¡Error!</string>
     <string name="ring_tone">Anillo</string>
     <string name="wrong">¡Error! Se ha producido un error. ¡Inténtalo de nuevo más tarde!</string>
@@ -18,4 +18,9 @@
     <string name="language_france">Francés</string>
     <string name="message_internet_connected">Red conectada</string>
     <string name="message_internet_disconnect">" Conexión de red desconectada"</string>
+    <string name="skip">Saltar</string>
+    <string name="ringtones">Colección de tonos de llamada</string>
+    <string name="next">Continuar</string>
+    <string name="bg_image">Imagen de fondo</string>
+    <string name="bg_call">" Llamada en segundo plano"</string>
 </resources>

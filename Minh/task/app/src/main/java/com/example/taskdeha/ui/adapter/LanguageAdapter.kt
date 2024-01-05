@@ -11,7 +11,6 @@ import com.example.taskdeha.extension.loadDrawable
 import com.example.taskdeha.utils.DiffCallback
 
 class LanguageAdapter : RecyclerView.Adapter<LanguageAdapter.ViewHolder>() {
-    private var list: MutableList<Language> = mutableListOf()
     private val asyncListDiffer = AsyncListDiffer(this, DiffCallback<Language>())
     private var onItemClickListener: OnItemClickListener? = null
     private var selectedPosition = RecyclerView.NO_POSITION
@@ -22,23 +21,20 @@ class LanguageAdapter : RecyclerView.Adapter<LanguageAdapter.ViewHolder>() {
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setData(product: List<Language>) {
-        list.clear()
-        list.addAll(product)
-        notifyDataSetChanged()
+    fun setData(language: List<Language>) {
+        asyncListDiffer.submitList(language)
     }
 
     fun setOnItemClickListener(listener: OnItemClickListener) {
         onItemClickListener = listener
     }
 
-    fun getLanguage(position: Int): Language = list[position]
+    fun getLanguage(position: Int): Language = asyncListDiffer.currentList[position]
     override fun onBindViewHolder(holder: LanguageAdapter.ViewHolder, position: Int) {
-        holder.bind(list.getOrNull(position) ?: return)
+        holder.bind(asyncListDiffer.currentList.getOrNull(position) ?: return)
     }
 
-    override fun getItemCount(): Int =
-        if (asyncListDiffer.currentList.size > 0) asyncListDiffer.currentList.size else list.size
+    override fun getItemCount(): Int = asyncListDiffer.currentList.size
 
     inner class ViewHolder(private val binding: ItemLanguageBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -46,7 +42,7 @@ class LanguageAdapter : RecyclerView.Adapter<LanguageAdapter.ViewHolder>() {
             with(binding) {
                 language.image?.let { thumbnail -> ivFlag.loadDrawable(thumbnail) }
                 language.nameLanguage?.let {
-                    tvLanguage.text = it.toString()
+                    tvLanguage.text = it
                 }
                 rbLanguage.isChecked = adapterPosition == selectedPosition
                 rbLanguage.setOnClickListener {

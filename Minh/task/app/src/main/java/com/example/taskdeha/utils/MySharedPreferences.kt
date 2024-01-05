@@ -12,6 +12,15 @@ object MySharedPreferences {
             context.getSharedPreferences(sharedPreferencesName, Context.MODE_PRIVATE)
     }
 
+    fun putString(key: String, value: String) {
+        val editor = sharedPreferences.edit()
+        editor.putString(key, value)
+        editor.apply()
+    }
+
+    fun getString(key: String, defaultValue: String): String {
+        return sharedPreferences.getString(key, defaultValue) ?: defaultValue
+    }
     fun getBoolean(key: String, defaultValue: Boolean): Boolean {
         return sharedPreferences.getBoolean(key, defaultValue)
     }
