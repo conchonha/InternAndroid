@@ -12,7 +12,7 @@ import com.example.taskdeha.utils.DiffCallback
 
 class LanguageAdapter : RecyclerView.Adapter<LanguageAdapter.ViewHolder>() {
     private val asyncListDiffer = AsyncListDiffer(this, DiffCallback<Language>())
-    private var onItemClickListener: OnItemClickListener? = null
+    private var onItemClickListener: OnItemClickListener<Language>? = null
     private var selectedPosition = RecyclerView.NO_POSITION
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LanguageAdapter.ViewHolder {
         val binding =
@@ -25,7 +25,7 @@ class LanguageAdapter : RecyclerView.Adapter<LanguageAdapter.ViewHolder>() {
         asyncListDiffer.submitList(language)
     }
 
-    fun setOnItemClickListener(listener: OnItemClickListener) {
+    fun setOnItemClickListener(listener: OnItemClickListener<Language>) {
         onItemClickListener = listener
     }
 
@@ -50,7 +50,7 @@ class LanguageAdapter : RecyclerView.Adapter<LanguageAdapter.ViewHolder>() {
                     if (position != RecyclerView.NO_POSITION) {
                         notifyItemChanged(selectedPosition)
                         selectedPosition = position
-                        onItemClickListener?.onItemClick(position)
+                        onItemClickListener?.onItemClick(position,language)
                     }
                 }
             }

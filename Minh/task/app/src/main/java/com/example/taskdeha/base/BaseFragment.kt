@@ -26,10 +26,18 @@ abstract class BaseFragment<T : ViewDataBinding, VM : BaseViewModel> :
     private var isState = false
     lateinit var binding: T
 
+    val mainActivity: MainActivity
+    get() = requireActivity() as MainActivity
+
     abstract val viewModel: VM
 
     @get:LayoutRes
     abstract val layoutId: Int
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel.iActivityAction = mainActivity
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -1,7 +1,10 @@
 package com.example.taskdeha.ui.adapter
 
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.graphics.drawable.toDrawable
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.RecyclerView
 import com.example.taskdeha.data.model.Introduce
@@ -35,9 +38,14 @@ class IntroduceAdapter : RecyclerView.Adapter<IntroduceAdapter.ViewHolder>() {
         RecyclerView.ViewHolder(binding.root) {
         fun bind(introduce: Introduce) {
             with(binding) {
-                introduce.image?.let { ivIntroduce.loadDrawable(it) }
+//                introduce.image?.let { ivIntroduce.loadDrawable(it) }
                 tvTitleIntroduce.text = introduce.title
                 tvMessageIntroduce.text = introduce.message
+
+                val bitmap = (ivIntroduce.drawable as? BitmapDrawable)?.bitmap ?: return
+                val scaleBitmap = Bitmap.createScaledBitmap(bitmap,479,634,false)
+                ivIntroduce.setImageBitmap(scaleBitmap)
+
             }
         }
     }

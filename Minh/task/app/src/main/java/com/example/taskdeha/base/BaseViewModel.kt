@@ -1,6 +1,9 @@
 package com.example.taskdeha.base
 
+import android.app.Application
+import android.os.Bundle
 import android.util.Log
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.taskdeha.extension.traceErrorException
@@ -12,8 +15,9 @@ import retrofit2.Callback
 import retrofit2.HttpException
 import retrofit2.Response
 
-open class BaseViewModel : ViewModel() {
+abstract class BaseViewModel(application: Application) : AndroidViewModel(application) {
     val message = SingleLiveEvent<String>()
+    var iActivityAction: IActionMainActivity? = null
 
     fun <T : Any> Call<T>.enqueue(liveData: MutableLiveData<T>) {
         isLoadingDialog.postValue(true)
@@ -49,4 +53,10 @@ open class BaseViewModel : ViewModel() {
             }
         })
     }
+
+    fun getString(res: Int) = getApplication<Application>().getString(res)
+}
+
+interface IActionMainActivity{
+    fun navigation(id: Int,bundle: Bundle?)
 }
