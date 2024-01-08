@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/fragmentLanguage">
+    <fragment
+        android:id="@+id/fragmentMenu"
+        android:name="com.example.taskdeha.ui.FragmentMenu"
+        android:label="FragmentMenu" />
+    <fragment
+        android:id="@+id/fragmentLanguage"
+        android:name="com.example.taskdeha.ui.language.FragmentLanguage"
+        android:label="FragmentLanguage" >
+        <action
+            android:id="@+id/action_fragmentLanguage_to_fragmentOnboarding"
+            app:destination="@id/fragmentOnboarding" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentOnboarding"
+        android:name="com.example.taskdeha.ui.FragmentOnboarding"
+        android:label="FragmentOnboarding" >
+        <action
+            android:id="@+id/action_fragmentOnboarding_to_fragmentMenu"
+            app:destination="@id/fragmentMenu" />
+    </fragment>
+</navigation>

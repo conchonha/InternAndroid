@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TaskDeha</string>
+    <string name="ring_tone">Nhạc chuông</string>
+    <string name="image">Hình nền</string>
+    <string name="animation">Hình động</string>
+    <string name="call_image">Màn hình</string>
+    <string name="error">Lỗi!</string>
+    <string name="wrong">Đã xảy ra lỗi!</string>
+    <string name="done">Xong!</string>
+    <string name="language">Ngôn ngữ</string>
+    <string name="language_china">Tiếng Trung</string>
+    <string name="language_english">Tiếng Anh</string>
+    <string name="language_spain">Tiếng Tây Ban Nha</string>
+    <string name="language_portugal">Tiếng Bồ Đào Nha</string>
+    <string name="language_hindi">Tiếng Hindi</string>
+    <string name="language_germany">Tiếng Đức</string>
+    <string name="language_france">Tiếng Pháp</string>
+    <string name="message_internet_connected">Đã kết nối mạng</string>
+    <string name="message_internet_disconnect">Đã ngắt kết nối mạng</string>
+    <string name="skip">" Bỏ qua"</string>
+    <string name="ringtones">" Bộ sưu tập nhạc chuông"</string>
+    <string name="next">Tiếp tục</string>
+    <string name="bg_image">Hình nền</string>
+    <string name="bg_call">Cuộc gọi nền</string>
+</resources>
