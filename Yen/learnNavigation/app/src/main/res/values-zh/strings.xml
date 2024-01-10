@@ -14,4 +14,10 @@
     <string name="cancle_dialog">取消</string>
     <string name="t_continue">继续</string>
     <string name="language">语言</string>
+    <string name="ringtones_collection">铃声合集</string>
+    <string name="background_image">背景图</string>
+    <string name="background_call">后台调用</string>
+    <string name="messRingStones">照顾病人、跟随病人很重要，但会发生在这样的时候，有很多工作和痛苦。</string>
+    <string name="skip">跳过</string>
+    <string name="next">继续</string>
 </resources>

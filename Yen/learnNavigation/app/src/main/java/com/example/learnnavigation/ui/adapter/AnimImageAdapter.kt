@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.learnnavigation.databinding.ItemsBackgroundImageFragmentBinding
-import com.example.learnnavigation.extension.Extension.Companion.loadImage
 import com.example.learnnavigation.data.model.Drinks
+import com.example.learnnavigation.extension.loadImage
 
 class AnimImageAdapter : RecyclerView.Adapter<AnimImageAdapter.ViewHolder>() {
 

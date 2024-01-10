@@ -14,8 +14,8 @@ import com.example.learnnavigation.utils.ItemSpacingDecoration
 
 class FragmentScreenImage: BaseFragmentDataBinding<FragmentScreenImageBinding, ScreenImageViewModel>() {
     override val layoutId: Int =R.layout.fragment_screen_image
-
     override val vm: ScreenImageViewModel by viewModels()
+
      private val adapter by lazy { AnimImageAdapter() }
      override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
          super.onViewCreated(view, savedInstanceState)
@@ -33,8 +33,4 @@ class FragmentScreenImage: BaseFragmentDataBinding<FragmentScreenImageBinding, S
              vm.fetchDataFromApi()
          }
      }
-
-    override fun onInternetChange(isNetWork: Boolean) {
-
-    }
 }

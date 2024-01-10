@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <ImageView
+            android:id="@+id/iv_introduce"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="@dimen/_0dp"
+            android:layout_marginBottom="@dimen/_20dp"
+            android:src="@drawable/ic_onboarding11"
+            app:layout_constraintBottom_toTopOf="@id/tv_title_introduce"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title_introduce"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_21dp"
+            android:layout_marginTop="@dimen/_15sp"
+            android:layout_marginBottom="@dimen/_20dp"
+            android:gravity="center"
+            android:text="@string/ringtones_collection"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_37sp"
+            app:layout_constraintBottom_toTopOf="@id/tv_message_introduce"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_message_introduce"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_13sp"
+            android:layout_marginBottom="7dp"
+            android:gravity="center"
+            android:text="@string/messRingStones"
+            android:textColor="@color/boldGray"
+            android:textSize="@dimen/_23sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/tv_title_introduce"
+            app:layout_constraintStart_toStartOf="@id/tv_title_introduce" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

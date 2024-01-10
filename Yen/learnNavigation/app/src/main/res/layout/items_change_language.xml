@@ -1,35 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="55dp"
-    android:layout_marginStart="@dimen/_10dp"
-    android:layout_marginTop="@dimen/_8dp"
-    android:background="@drawable/bg_items_change_language"
-    android:gravity="center"
-    android:orientation="horizontal">
+<layout  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="@dimen/_10dp"
+        android:layout_marginTop="@dimen/_8dp"
+        android:background="@drawable/bg_items_change_language"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-    <ImageView
-        android:id="@+id/iv_Flag"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="@dimen/_8dp"
-        android:src="@drawable/ic_chinaflag" />
+        <ImageView
+            android:id="@+id/iv_Flag"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="@dimen/_8dp"
+            android:src="@drawable/ic_chinaflag" />
 
-    <TextView
-        android:id="@+id/tv_Country"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_18dp"
-        android:text="@string/japanese"
-        android:textColor="@color/black"
-        android:textSize="@dimen/_13sp" />
+        <TextView
+            android:id="@+id/tv_Country"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_18dp"
+            android:text="@string/japanese"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13sp" />
 
-    <RadioButton
-        android:id="@+id/cb_chooseLanguage"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_170dp"
-        android:checked="false"
-        android:clickable="false"/>
+        <RadioButton
+            android:id="@+id/cb_chooseLanguage"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_170dp"
+            android:checked="false"
+            android:clickable="false"/>
 
-</LinearLayout>
+    </LinearLayout>
+</layout>

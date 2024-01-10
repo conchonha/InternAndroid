@@ -9,7 +9,7 @@
 
     <item
         android:id="@+id/action_top"
-        android:icon="@drawable/ic_crown"
+        android:icon="@drawable/ic_king"
         android:title="@string/crown"
         app:showAsAction="ifRoom" />
 

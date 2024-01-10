@@ -9,7 +9,7 @@ fun traceErrorException(throwable: Throwable?): String {
 
         is HttpException -> {
             when (throwable.code()) {
-                //200->"0k"
+                200->"0k"
                 400 -> "BAD_REQUEST"
                 401 -> "UNAUTHORIZED"
 //                403 -> ApiError(

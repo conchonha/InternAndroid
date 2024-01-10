@@ -3,6 +3,7 @@ package com.example.learnnavigation.ui.dialog
 import android.os.Bundle
 import android.view.View
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.FragmentManager
 import com.example.learnnavigation.R
 import com.example.learnnavigation.databinding.DialogYesNoOptionBinding
 import com.example.learnnavigation.ui.dialog.model.DialogData
@@ -23,8 +24,8 @@ class DialogYesNoOption : BaseDialogFrament<DialogYesNoOptionBinding>() {
                 dismiss()
             }
         }
-
     }
+
 
     fun updateUi(){
         when (dialogData.isLoading) {
@@ -46,8 +47,6 @@ class DialogYesNoOption : BaseDialogFrament<DialogYesNoOptionBinding>() {
         }
     }
 }
-
-
 
 
 

@@ -14,4 +14,10 @@
     <string name="cancle_dialog">Cancel</string>
     <string name="t_continue">Continue</string>
     <string name="language">Language</string>
+    <string name="ringtones_collection">Ringtones Collection</string>
+    <string name="skip">Skip</string>
+    <string name="background_image">Background Image</string>
+    <string name="background_call">Background Call</string>
+    <string name="messRingStones">It is important to take care of the patient, to be followed by the patient, but it will happen at such a time that there is a lot of work and pain.</string>
+    <string name="next">Continue</string>
 </resources>

@@ -5,11 +5,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.learnnavigation.R
 import com.example.learnnavigation.databinding.ItemsBackgroundImageFragmentBinding
 import com.example.learnnavigation.data.model.SuggestedSearches
-import com.example.learnnavigation.extension.Extension.Companion.loadImage
+import com.example.learnnavigation.extension.loadImage
+import com.example.learnnavigation.utils.BaseRecyclerViewAdapter
 
-class BackgroundImageAdapter : RecyclerView.Adapter<BackgroundImageAdapter.ViewHolder>() {
+class BackgroundImageAdapter: RecyclerView.Adapter<BackgroundImageAdapter.ViewHolder>() {
 
     private val asyncListDiffer = AsyncListDiffer(this, DiffCallback())
 

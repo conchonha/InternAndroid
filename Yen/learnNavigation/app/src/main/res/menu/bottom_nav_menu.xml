@@ -3,17 +3,17 @@
     <item
         android:id="@+id/lbl_Ring"
         android:title="@string/Ring"
-        android:icon="@drawable/ic_volume" />
+        android:icon="@drawable/ic_ring" />
 
     <item
         android:id="@+id/lbl_BackgroundImage"
         android:title="@string/BgImage"
-        android:icon="@drawable/ic_image_24" />
+        android:icon="@drawable/ic_bg_image" />
 
     <item
         android:id="@+id/lbl_AnimImage"
         android:title="@string/AnimImage"
-        android:icon="@drawable/ic_image_search" />
+        android:icon="@drawable/ic_amin_image" />
 
     <item
         android:id="@+id/lbl_ScreenImage"

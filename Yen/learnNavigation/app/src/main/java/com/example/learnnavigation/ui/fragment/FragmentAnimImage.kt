@@ -39,7 +39,4 @@ class FragmentAnimImage  : BaseFragmentDataBinding<FragmentAnimationImageBinding
             vm.fetchDataFromApi()
         }
     }
-    override fun onInternetChange(isNetWork: Boolean) {
-
-    }
 }

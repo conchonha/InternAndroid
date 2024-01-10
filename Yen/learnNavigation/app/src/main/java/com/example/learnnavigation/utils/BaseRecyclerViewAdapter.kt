@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseRecyclerViewAdapter<T : Any, VB : ViewBinding>() :
+abstract class BaseRecyclerViewAdapter<T : Any, VB : ViewBinding> :
     RecyclerView.Adapter<BaseRecyclerViewAdapter.BaseViewHolder<VB>>() {
     protected var items = AsyncListDiffer(this, DiffCallback<T>())
 
@@ -20,15 +20,19 @@ abstract class BaseRecyclerViewAdapter<T : Any, VB : ViewBinding>() :
     protected abstract val layoutId: Int
 
     override fun getItemCount() = items.currentList.count()
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = BaseViewHolder<VB>(
-        DataBindingUtil.inflate(LayoutInflater.from(parent.context), layoutId, parent, false)
-    )
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
+        BaseViewHolder<VB>(
+            DataBindingUtil.inflate(
+                LayoutInflater.from(parent.context),
+                layoutId,
+                parent,
+                false
+            )
+        )
 
     open override fun onBindViewHolder(holder: BaseViewHolder<VB>, position: Int) {
         onBindViewHolder(holder.binding, position)
     }
-
     abstract fun onBindViewHolder(binding: VB, position: Int)
 
     val listItem: List<T>

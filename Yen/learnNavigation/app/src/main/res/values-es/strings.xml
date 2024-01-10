@@ -14,4 +14,10 @@
     <string name="cancle_dialog">Cancelar</string>
     <string name="t_continue">Continuar</string>
     <string name="language">Idioma</string>
+    <string name="ringtones_collection">Colección de tonos de llamada</string>
+    <string name="background_image">Imagen de fondo</string>
+    <string name="background_call">Llamada en segundo plano</string>
+    <string name="messRingStones">Es importante cuidar al paciente, ser seguido por el paciente, pero sucederá en un momento en el que hay mucho trabajo y dolor.</string>
+    <string name="skip">saltar</string>
+    <string name="next">Continuar</string>
 </resources>

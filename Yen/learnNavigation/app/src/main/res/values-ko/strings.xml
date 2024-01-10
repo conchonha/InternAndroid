@@ -14,4 +14,10 @@
     <string name="cancle_dialog">취소</string>
     <string name="t_continue">계속하다</string>
     <string name="language">언어</string>
+    <string name="ringtones_collection">벨소리 컬렉션</string>
+    <string name="background_image">배경 이미지</string>
+    <string name="background_call">백그라운드 통화</string>
+    <string name="messRingStones">환자를 잘 보살피는 것, 환자를 따라가는 것도 중요하지만, 그런 일이 생기고 괴로움이 많은 시기에 일어날 것입니다.</string>
+    <string name="skip">건너뛰다</string>
+    <string name="next">계속하다</string>
 </resources>

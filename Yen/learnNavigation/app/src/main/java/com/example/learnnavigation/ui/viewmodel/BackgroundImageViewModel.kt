@@ -8,7 +8,7 @@ import com.example.learnnavigation.data.remote.ApiService
 import com.example.learnnavigation.ui.adapter.CallBackVoid
 import com.example.learnnavigation.ui.adapter.IActionClick
 
-class BackgroundImageViewModel(application: Application) : BaseViewModel(application), IActionClick {
+class BackgroundImageViewModel(application: Application) : BaseViewModel(application){
 
 
     val suggestedSearches = MutableLiveData<Demo>()
@@ -19,11 +19,7 @@ class BackgroundImageViewModel(application: Application) : BaseViewModel(applica
         apiService.getDictionaries().enqueues(suggestedSearches)
         }
 
-    override fun onClickItem(position: Int, data: languageCountry, callback: CallBackVoid) {
-        data.isChecked = true
 
-        callback?.invoke()
-    }
 
 }
 

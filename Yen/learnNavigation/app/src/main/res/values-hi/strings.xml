@@ -14,4 +14,10 @@
     <string name="cancle_dialog">रद्द करना</string>
     <string name="t_continue">जारी रखना</string>
     <string name="language">भाषा</string>
+    <string name="ringtones_collection">रिंगटोन संग्रह</string>
+    <string name="background_image">पृष्ठभूमि छवि</string>
+    <string name="background_call">पृष्ठभूमि कॉल</string>
+    <string name="messRingStones">मरीज़ की देखभाल करना, मरीज़ की देखभाल करना ज़रूरी है, लेकिन यह ऐसे समय में होगा जब बहुत काम और दर्द होगा।</string>
+    <string name="skip">छोडना</string>
+    <string name="next">जारी रखना</string>
 </resources>

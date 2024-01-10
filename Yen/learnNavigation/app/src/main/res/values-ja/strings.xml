@@ -14,4 +14,10 @@
     <string name="cancle_dialog">キャンセル</string>
     <string name="t_continue">続く</string>
     <string name="language">言語</string>
+    <string name="ringtones_collection">着信音コレクション</string>
+    <string name="background_image">背景画像</string>
+    <string name="background_call">バックグラウンドコール</string>
+    <string name="messRingStones">患者をケアし、患者に従うことは重要ですが、多くの労力と苦痛が伴うような時期に起こります。</string>
+    <string name="skip">スキップ</string>
+    <string name="next">続く</string>
 </resources>

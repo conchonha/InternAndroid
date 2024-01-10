@@ -2,6 +2,7 @@ package com.example.learnnavigation.ui.fragment.navigation
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.example.learnnavigation.utils.Const.INDEX_FRAIMAGE
@@ -18,24 +19,30 @@ import com.example.learnnavigation.ui.viewmodel.HostViewModel
 class FragmentHost : BaseFragmentDataBinding<FragmentHostBinding, HostViewModel>() {
     override val layoutId: Int = R.layout.fragment_host
     override val vm: HostViewModel by viewModels()
-     private val adapter by lazy { ViewPage2Adapter(this) }
+     private val adapter by lazy { ViewPage2Adapter(requireActivity()) }
     private val viewPage2 by lazy { binding.viewPage2 }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupViewPager()
-        setupBottomNavigationView()
-        (requireActivity() as MainActivity).setSupportActionBar(binding.toolbar)
-        (requireActivity() as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        mainActivity?.setSupportActionBar(binding.toolbar)
+        mainActivity?.supportActionBar?.setDisplayHomeAsUpEnabled(false)
         binding.viewPage2.isUserInputEnabled = false;
-//        binding.bottomNav.setOnNavigationItemSelectedListener { item ->
-//            binding.viewPage2.setCurrentItem(adapter.convertPositionTabFromMenuId(item.itemId),false)
-//            true
-//        }
+        binding.bottomNav.setOnNavigationItemSelectedListener { item ->
+            binding.viewPage2.setCurrentItem(adapter.convertPositionTabFromMenuId(item.itemId),false)
+            true
+        }
     }
     override fun onInternetChange(isNetWork: Boolean) {
     }
 
+    override fun onFragmentResume(isResume: Boolean) {
+        if (isResume){
+
+        }else{
+            Toast.makeText(requireContext(),"Resume",Toast.LENGTH_LONG).show()
+        }
+    }
     private fun setupViewPager() {
         with(viewPage2) {
             adapter = this@FragmentHost.adapter
@@ -57,19 +64,4 @@ class FragmentHost : BaseFragmentDataBinding<FragmentHostBinding, HostViewModel>
             })
         }
     }
-    private fun setupBottomNavigationView() {
-        binding.bottomNav.setOnItemSelectedListener { menuItem ->
-            val currentItem = when (menuItem.itemId) {
-                R.id.lbl_Ring -> INDEX_FRRING
-                R.id.lbl_BackgroundImage -> INDEX_FRBGIMAGE
-                R.id.lbl_AnimImage -> INDEX_FRAIMAGE
-                R.id.lbl_ScreenImage -> INDEX_FRSCREENIMAGE
-                else -> return@setOnItemSelectedListener false
-            }
-            viewPage2.currentItem = currentItem
-            true
-        }
-    }
-
-
 }
