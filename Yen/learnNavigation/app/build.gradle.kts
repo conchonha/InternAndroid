@@ -60,4 +60,7 @@ dependencies {
     implementation ("androidx.viewpager2:viewpager2:1.0.0")
     implementation ("com.github.bumptech.glide:glide:4.16.0")
     implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+    implementation(kotlin("reflect"))
+    implementation ("me.relex:circleindicator:2.1.6")
+
 }

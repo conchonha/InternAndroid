@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">learnNavigation</string>
+    <string name="Ring">Ringtone</string>
+    <string name="BgImage">Wallpaper</string>
+    <string name="AnimImage">Animated Image</string>
+    <string name="ScreenImage">Screen</string>
+    <string name="error_title">Error API!</string>
+    <string name="search">Search</string>
+    <string name="crown">Crown</string>
+    <string name="TitleCorrectDialog">Well done</string>
+    <string name="MessageDialog">Lorem ipsum dolor sit amet, consectetur   adipiscing elit, sed do eiusmod Lorem   ipsum dolor sit amet</string>
+    <string name="TitleIncorrectDialog">Something went wrong</string>
+    <string name="cancle_dialog">Cancel</string>
+    <string name="t_continue">Continue</string>
+    <string name="language">Language</string>
+    <string name="ringtones_collection">Ringtones Collection</string>
+    <string name="skip">Skip</string>
+    <string name="background_image">Background Image</string>
+    <string name="background_call">Background Call</string>
+    <string name="messRingStones">It is important to take care of the patient, to be followed by the patient, but it will happen at such a time that there is a lot of work and pain.</string>
+    <string name="next">Continue</string>
+</resources>

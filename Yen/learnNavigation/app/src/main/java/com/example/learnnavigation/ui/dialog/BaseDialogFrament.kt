@@ -10,12 +10,14 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.FragmentManager
 
 abstract class BaseDialogFrament<VB : ViewDataBinding> : DialogFragment() {
     open val width = ViewGroup.LayoutParams.MATCH_PARENT
     open val height = ViewGroup.LayoutParams.WRAP_CONTENT
     open val style: Int? = android.R.style.Theme_Panel
-
+    var isShow = false
+        private set
     lateinit var binding: VB
 
     @get:LayoutRes
@@ -38,6 +40,16 @@ abstract class BaseDialogFrament<VB : ViewDataBinding> : DialogFragment() {
         dialog?.window?.setDimAmount(0.7f)
         dialog?.setCanceledOnTouchOutside(true)
         dialog?.setCancelable(true)
+    }
+
+    fun show(manager: FragmentManager){
+        isShow = true
+        show(manager,tag)
+    }
+
+    override fun onDetach() {
+        isShow=  false
+        super.onDetach()
     }
 
 

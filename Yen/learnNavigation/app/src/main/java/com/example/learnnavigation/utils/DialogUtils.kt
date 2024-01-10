@@ -6,6 +6,7 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.util.Log
+import android.widget.Toast
 import com.example.learnnavigation.R
 
 object DialogUtils {
@@ -54,7 +55,13 @@ object DialogUtils {
             dialog?.dismiss()
         }
     }
-
+//    fun dismissLoadingDialog(dialog: Dialog?) {
+//        dialog?.let {
+//            if (it.isShowing) {
+//                it.dismiss()
+//            }
+//        }
+//    }
      fun inProgress(context: Context,isLoading: Boolean){
          if (isLoading){
              showLoadingDialog(context)
@@ -62,4 +69,8 @@ object DialogUtils {
              dismissLoadingDialog()
          }
      }
+
+    fun showToast(res: String, context: Context) {
+        Toast.makeText(context, res, Toast.LENGTH_SHORT).show()
+    }
 }

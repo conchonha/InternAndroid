@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">learnNavigation</string>
+    <string name="Ring">रिंगटोन</string>
+    <string name="BgImage">वॉलपेपर</string>
+    <string name="AnimImage">एनिमेटेड छवि</string>
+    <string name="ScreenImage">स्क्रीन</string>
+    <string name="error_title">त्रुटि एपीआई!</string>
+    <string name="search">खोज</string>
+    <string name="crown">ताज</string>
+    <string name="TitleCorrectDialog">बहुत अच्छा</string>
+    <string name="MessageDialog">ग्राहक सेवा महत्वपूर्ण है</string>
+    <string name="TitleIncorrectDialog">कुछ गलत हो गया</string>
+    <string name="cancle_dialog">रद्द करना</string>
+    <string name="t_continue">जारी रखना</string>
+    <string name="language">भाषा</string>
+    <string name="ringtones_collection">रिंगटोन संग्रह</string>
+    <string name="background_image">पृष्ठभूमि छवि</string>
+    <string name="background_call">पृष्ठभूमि कॉल</string>
+    <string name="messRingStones">मरीज़ की देखभाल करना, मरीज़ की देखभाल करना ज़रूरी है, लेकिन यह ऐसे समय में होगा जब बहुत काम और दर्द होगा।</string>
+    <string name="skip">छोडना</string>
+    <string name="next">जारी रखना</string>
+</resources>

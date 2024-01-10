@@ -1,4 +1,6 @@
 package com.example.learnnavigation.ui.viewmodel
 
-class HostViewModel : BaseViewModel() {
+import android.app.Application
+
+class HostViewModel(application: Application) : BaseViewModel(application) {
 }

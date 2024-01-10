@@ -3,10 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/fragmentHost">
+    app:startDestination="@id/changeLanguageFragment">
     <fragment
         android:id="@+id/fragmentHost"
         android:name="com.example.learnnavigation.ui.fragment.navigation.FragmentHost"
         android:label="fragment_host"
         tools:layout="@layout/fragment_host" />
+    <fragment
+        android:id="@+id/changeLanguageFragment"
+        android:name="com.example.learnnavigation.ui.fragment.FragmentChangeLanguage"
+        android:label="fragment_change_language"
+        tools:layout="@layout/fragment_change_language" >
+        <action
+            android:id="@+id/action_changeLanguageFragment_to_fragmentIntroduction"
+            app:destination="@id/fragmentIntroduction" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentIntroduction"
+        android:name="com.example.learnnavigation.ui.fragment.introduce.FragmentIntroduction"
+        android:label="FragmentIntroduction" >
+        <action
+            android:id="@+id/action_fragmentIntroduction_to_fragmentHost"
+            app:destination="@id/fragmentHost" />
+    </fragment>
 </navigation>

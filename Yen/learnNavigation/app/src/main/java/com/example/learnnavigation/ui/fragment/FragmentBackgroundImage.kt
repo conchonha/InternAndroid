@@ -34,8 +34,4 @@ class FragmentBackgroundImage : BaseFragmentDataBinding<FragmentBackgroundImageB
             vm.fetchDataFromApi()
         }
     }
-
-    override fun onInternetChange(isNetWork: Boolean) {
-
-    }
 }

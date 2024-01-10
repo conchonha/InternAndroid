@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">learnNavigation</string>
+    <string name="Ring">Tono de llamada</string>
+    <string name="BgImage">Fondo de pantalla</string>
+    <string name="AnimImage">Imagen animada</string>
+    <string name="ScreenImage">Pantalla</string>
+    <string name="error_title">¡API de error!</string>
+    <string name="search">Buscar</string>
+    <string name="crown">Corona</string>
+    <string name="TitleCorrectDialog">Bien hecho</string>
+    <string name="MessageDialog">El servicio al cliente es importante</string>
+    <string name="TitleIncorrectDialog">Algo salió mal</string>
+    <string name="cancle_dialog">Cancelar</string>
+    <string name="t_continue">Continuar</string>
+    <string name="language">Idioma</string>
+    <string name="ringtones_collection">Colección de tonos de llamada</string>
+    <string name="background_image">Imagen de fondo</string>
+    <string name="background_call">Llamada en segundo plano</string>
+    <string name="messRingStones">Es importante cuidar al paciente, ser seguido por el paciente, pero sucederá en un momento en el que hay mucho trabajo y dolor.</string>
+    <string name="skip">saltar</string>
+    <string name="next">Continuar</string>
+</resources>

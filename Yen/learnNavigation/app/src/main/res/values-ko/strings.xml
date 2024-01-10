@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">learnNavigation</string>
+    <string name="Ring">벨소리</string>
+    <string name="BgImage">벽지</string>
+    <string name="AnimImage">애니메이션 이미지</string>
+    <string name="ScreenImage">화면</string>
+    <string name="error_title">오류 API!</string>
+    <string name="search">찾다</string>
+    <string name="crown">왕관</string>
+    <string name="TitleCorrectDialog">잘하셨어요</string>
+    <string name="MessageDialog">고객 서비스가 중요합니다</string>
+    <string name="TitleIncorrectDialog">문제가 발생했습니다.</string>
+    <string name="cancle_dialog">취소</string>
+    <string name="t_continue">계속하다</string>
+    <string name="language">언어</string>
+    <string name="ringtones_collection">벨소리 컬렉션</string>
+    <string name="background_image">배경 이미지</string>
+    <string name="background_call">백그라운드 통화</string>
+    <string name="messRingStones">환자를 잘 보살피는 것, 환자를 따라가는 것도 중요하지만, 그런 일이 생기고 괴로움이 많은 시기에 일어날 것입니다.</string>
+    <string name="skip">건너뛰다</string>
+    <string name="next">계속하다</string>
+</resources>

@@ -1,4 +1,13 @@
 <resources>
+    <string name="const_japan" translatable="false">ja</string>
+    <string name="const_english" translatable="false">en</string>
+    <string name="const_france" translatable="false">fr</string>
+    <string name="const_indian" translatable="false">hi</string>
+    <string name="const_korean" translatable="false">ko</string>
+    <string name="const_vietnam" translatable="false">vi</string>
+    <string name="const_china" translatable="false">zh</string>
+    <string name="const_spanish" translatable="false">se</string>
+
     <string name="app_name">learnNavigation</string>
     <string name="Ring">Ringtone</string>
     <string name="BgImage">Wallpaper</string>
@@ -7,10 +16,19 @@
     <string name="error_title">Error API!</string>
     <string name="search">Search</string>
     <string name="crown">Crown</string>
-    <string name="TitleCorrectDialog" >Well done</string>
-    <string name="MessageDialog" >Lorem ipsum dolor sit amet, consectetur \n adipiscing elit, sed do eiusmod Lorem \n ipsum dolor sit amet</string>
+    <string name="TitleCorrectDialog">Well done</string>
+    <string name="MessageDialog">Lorem ipsum dolor sit amet, consectetur \n adipiscing elit, sed do eiusmod Lorem \n ipsum dolor sit amet</string>
     <string name="TitleIncorrectDialog">Something went wrong</string>
     <string name="cancle_dialog">Cancel</string>
     <string name="t_continue">Continue</string>
+    <string name="language">Language</string>
+    <string name="japanese" translatable="false">Japanese</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="skip">Skip</string>
+    <string name="next">Continue</string>
+    <string name="ringtones_collection">Ringtones Collection</string>
+    <string name="background_image" >Background Image</string>
+    <string name="background_call" >Background Call</string>
+    <string name="messRingStones" >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
 
 </resources>
