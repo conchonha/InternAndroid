@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">TaskDeha</string>
-    <string name="bg_image">Background</string>
-    <string name="animation">Animation</string>
-    <string name="screen">Screen</string>
+    <string name="image">Image</string>
+    <string name="animation">Animated Image</string>
+    <string name="call_image">Call Image</string>
     <string name="error">Error!</string>
-    <string name="ring_tone">Ring</string>
+    <string name="ring_tone">Ringtones</string>
     <string name="wrong">Something went wrong</string>
     <string name="done">Well Done</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -18,4 +18,19 @@
     <string name="language_france">France</string>
     <string name="message_internet_connected">Internet Connected</string>
     <string name="message_internet_disconnect">Internet Disconnect</string>
+
+    <string name="const_eng" translatable="false">en</string>
+    <string name="const_spain" translatable="false">es</string>
+    <string name="const_india" translatable="false">hi</string>
+    <string name="const_portugal" translatable="false">pt</string>
+    <string name="const_germany" translatable="false">de</string>
+    <string name="const_china" translatable="false">zh</string>
+    <string name="const_france" translatable="false">fr</string>
+    <string name="skip">Skip</string>
+    <string name="ringtones">Ringtones Collection</string>
+    <string name="introduce" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="next">Continue</string>
+    <string name="bg_image">Background Image</string>
+    <string name="bg_call">Background Call</string>
+
 </resources>

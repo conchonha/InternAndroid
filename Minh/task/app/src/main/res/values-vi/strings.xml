@@ -2,9 +2,9 @@
 <resources>
     <string name="app_name">TaskDeha</string>
     <string name="ring_tone">Nhạc chuông</string>
-    <string name="bg_image">Hình nền</string>
+    <string name="image">Hình nền</string>
     <string name="animation">Hình động</string>
-    <string name="screen">Màn hình</string>
+    <string name="call_image">Màn hình</string>
     <string name="error">Lỗi!</string>
     <string name="wrong">Đã xảy ra lỗi!</string>
     <string name="done">Xong!</string>
@@ -18,4 +18,9 @@
     <string name="language_france">Tiếng Pháp</string>
     <string name="message_internet_connected">Đã kết nối mạng</string>
     <string name="message_internet_disconnect">Đã ngắt kết nối mạng</string>
+    <string name="skip">" Bỏ qua"</string>
+    <string name="ringtones">" Bộ sưu tập nhạc chuông"</string>
+    <string name="next">Tiếp tục</string>
+    <string name="bg_image">Hình nền</string>
+    <string name="bg_call">Cuộc gọi nền</string>
 </resources>

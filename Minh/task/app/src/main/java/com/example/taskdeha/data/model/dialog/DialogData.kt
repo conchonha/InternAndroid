@@ -5,7 +5,7 @@ data class DialogData(
     val message: String = "",
     val lblOke: String = "",
     val lblCancel: String = "",
-    val isSuccess: Boolean = true,
+    var isSuccess: Boolean = true,
     val type: DialogType = DialogType.YES_NO
 )
 

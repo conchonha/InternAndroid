@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">TaskDeha</string>
-    <string name="bg_image">背景图</string>
+    <string name="image">背景图</string>
     <string name="animation">青铜人像</string>
-    <string name="screen">" 屏幕"</string>
+    <string name="call_image">" 屏幕"</string>
     <string name="error">" 错误！"</string>
     <string name="ring_tone">戒指</string>
     <string name="wrong">错误！发生错误。请稍后再试！</string>
@@ -18,4 +18,9 @@
     <string name="language_france">法语</string>
     <string name="message_internet_connected">网络已连接</string>
     <string name="message_internet_disconnect">网络连接已断开</string>
+    <string name="skip">" 跳过"</string>
+    <string name="ringtones">铃声合集</string>
+    <string name="next">" 继续"</string>
+    <string name="bg_image">背景图</string>
+    <string name="bg_call">" 后台调用"</string>
 </resources>
