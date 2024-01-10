@@ -27,7 +27,7 @@
             android:layout_height="37dp"
             android:layout_marginStart="@dimen/_11dp"
             android:layout_marginTop="@dimen/_30dp"
-            android:src="@drawable/oip"
+            android:src="@drawable/ico_submitchooselanguage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/language"
             app:layout_constraintTop_toTopOf="parent" />
