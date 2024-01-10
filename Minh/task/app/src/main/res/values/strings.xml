@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">TaskDeha</string>
+    <string name="bg_image">Background</string>
+    <string name="animation">Animation</string>
+    <string name="screen">Screen</string>
+    <string name="error">Error!</string>
+    <string name="ring_tone">Ring</string>
+    <string name="wrong">Something went wrong</string>
+    <string name="done">Well Done</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="language">Language</string>
+    <string name="language_china">China</string>
+    <string name="language_english">English</string>
+    <string name="language_spain">Spain</string>
+    <string name="language_portugal">Portugal</string>
+    <string name="language_hindi">Hindi</string>
+    <string name="language_germany">Germany</string>
+    <string name="language_france">France</string>
+</resources>
