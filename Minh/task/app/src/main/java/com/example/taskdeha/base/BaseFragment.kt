@@ -13,12 +13,16 @@ import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import com.example.taskdeha.IInternetChange
 import com.example.taskdeha.MainActivity
+import com.example.taskdeha.R
+import com.example.taskdeha.data.model.dialog.DialogData
+import com.example.taskdeha.utils.CustomDialog
 import com.example.taskdeha.utils.DialogUtils
 
 
 abstract class BaseFragment<T : ViewDataBinding, VM : BaseViewModel> :
     Fragment(), IInternetChange {
-
+    var isInternet: Boolean = true
+    private var dialog = CustomDialog()
     lateinit var binding: T
 
     abstract val viewModel: VM
@@ -43,6 +47,7 @@ abstract class BaseFragment<T : ViewDataBinding, VM : BaseViewModel> :
             DialogUtils.showErrorDialog(requireActivity(), message)
         }
     }
+
     override fun onStart() {
         super.onStart()
         (requireActivity() as MainActivity).addInternetChange(this)
@@ -53,4 +58,17 @@ abstract class BaseFragment<T : ViewDataBinding, VM : BaseViewModel> :
         (requireActivity() as MainActivity).removeInternetChange(this)
     }
 
+    override fun onInternetChange(isNetWork: Boolean) {
+        if (dialog.isVisible) {
+            dialog.dismiss()
+            dialog = CustomDialog()
+        }
+        if (isNetWork) {
+            dialog.dialogData = DialogData(isSuccess = true, message = resources.getString(R.string.message_internet_connected))
+            DialogUtils.showToast(resources.getString(R.string.message_internet_connected), requireContext())
+        } else {
+            dialog.dialogData = DialogData(isSuccess = false, message = resources.getString(R.string.message_internet_disconnect))
+        }
+        dialog.show(childFragmentManager, "")
+    }
 }

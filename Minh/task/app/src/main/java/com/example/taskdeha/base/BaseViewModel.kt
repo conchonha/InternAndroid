@@ -21,7 +21,6 @@ open class BaseViewModel : ViewModel() {
         enqueue(object : Callback<T> {
             override fun onResponse(call: Call<T>, response: Response<T>) {
                 isLoadingDialog.postValue(false)
-                Log.d("dialog1", "False")
                 if (response.isSuccessful) {
                     liveData.postValue(response.body() as T)
                 } else {

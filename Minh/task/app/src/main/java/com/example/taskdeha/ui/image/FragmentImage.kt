@@ -14,9 +14,6 @@ import com.example.taskdeha.ui.gif.GifViewModel
 
 class FragmentImage : BaseFragment<FragmentGifBinding, GifViewModel>() {
     override val layoutId: Int = R.layout.fragment_image
-    override fun onInternetChange(isNetWork: Boolean) {
-        TODO("Not yet implemented")
-    }
 
     override val viewModel: GifViewModel by viewModels()
 }

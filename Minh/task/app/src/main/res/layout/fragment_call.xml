@@ -27,6 +27,7 @@
             android:layout_height="@dimen/_0dp"
             android:layout_marginStart="@dimen/_10dp"
             android:layout_marginEnd="@dimen/_10dp"
+            android:layout_marginTop="@dimen/_10dp"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

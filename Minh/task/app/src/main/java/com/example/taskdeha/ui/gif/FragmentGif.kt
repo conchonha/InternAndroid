@@ -21,8 +21,8 @@ class FragmentGif : BaseFragment<FragmentGifBinding, GifViewModel>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         adapter = ItemAdapter()
-//        initViewModel()
-//        viewModel.getData()
+        initViewModel()
+        viewModel.getData()
 
         val horizontalSpacing = resources.getDimensionPixelSize(R.dimen._14dp)
         val verticalSpacing = resources.getDimensionPixelSize(R.dimen._14dp)
@@ -38,20 +38,9 @@ class FragmentGif : BaseFragment<FragmentGifBinding, GifViewModel>() {
 
     }
 
-    override fun onInternetChange(isNetWork: Boolean) {
-        if (isNetWork) {
-            DialogUtils.dimissAlert()
-            Log.d("Test", "test")
-            Toast.makeText(context, "Đã có kết nối mạnggg", Toast.LENGTH_SHORT).show()
-        } else {
-            DialogUtils.showErrorDialog(requireContext(), "Mat ke noi mang")
-            Toast.makeText(context, "Mất kết nối mạnggg", Toast.LENGTH_SHORT).show()
+    private fun initViewModel() {
+        viewModel.dataDrink.observe(viewLifecycleOwner) {
+            adapter.updateDrink(it.drinks)
         }
     }
-
-//    private fun initViewModel() {
-//        viewModel.dataDrink.observe(viewLifecycleOwner) {
-//            adapter.updateData(it.drinks)
-//        }
-//    }
 }

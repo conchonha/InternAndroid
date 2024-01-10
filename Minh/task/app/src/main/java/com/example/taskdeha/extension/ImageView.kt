@@ -8,3 +8,8 @@ fun ImageView.load(url: String) {
         .load(url)
         .into(this)
 }
+fun ImageView.loadDrawable(url:Int){
+    Glide.with(this)
+        .load(url)
+        .into(this)
+}
