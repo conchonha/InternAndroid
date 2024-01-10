@@ -16,7 +16,6 @@ import com.example.learnnavigation.ui.IInternetChange
 import com.example.learnnavigation.ui.activity.MainActivity
 import com.example.learnnavigation.ui.dialog.DialogYesNoOption
 import com.example.learnnavigation.ui.viewmodel.BaseViewModel
-import com.example.learnnavigation.ui.viewmodel.IActionMainActivity
 import com.example.learnnavigation.utils.EventSender
 import kotlinx.coroutines.launch
 
@@ -84,8 +83,9 @@ abstract class BaseFragmentDataBinding<T :ViewDataBinding,VM: BaseViewModel> :
         vm.message.observe(viewLifecycleOwner) {message ->
           //  DialogUtils.showErrorDialog(requireActivity(), message)
         }
+
         lifecycleScope.launch {
-            vm.event.collect{
+            vm.eventReceiver.collect{
                 when(it){
                     is EventSender.Navigation -> navigation(it.id, it.bundle)
                     else -> {}

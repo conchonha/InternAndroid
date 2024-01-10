@@ -10,8 +10,12 @@ import androidx.lifecycle.viewModelScope
 import com.example.learnnavigation.extension.traceErrorException
 import com.example.learnnavigation.utils.DialogUtils.isLoadingDialog
 import com.example.learnnavigation.utils.EventSender
+import com.example.learnnavigation.utils.SharePrefs
 import com.example.learnnavigation.utils.SingleLiveEvent
+import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.conflate
+import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 import org.json.JSONObject
 import retrofit2.Call
@@ -22,14 +26,16 @@ import retrofit2.Response
 abstract class BaseViewModel(application: Application) : AndroidViewModel(application) {
     val message = SingleLiveEvent<String>()
     var isResume: Boolean = false
-    val event = MutableSharedFlow<EventSender>(replay = 1)
+
+    private val event = Channel<EventSender>()
+    val eventReceiver = event.receiveAsFlow().conflate()
 
     var iActivityAction: IActionMainActivity? = null
 
     open fun onInit(arg: Bundle?){}
     fun navigation(des: Int, bundle: Bundle? = null) {
         viewModelScope.launch {
-            event.emit(EventSender.Navigation(des, bundle))
+            event.send(EventSender.Navigation(des, bundle))
         }
     }
     fun <T : Any> Call<T>.enqueues(liveData: MutableLiveData<T>) {

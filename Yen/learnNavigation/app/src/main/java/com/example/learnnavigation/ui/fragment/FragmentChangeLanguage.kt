@@ -4,17 +4,13 @@
     import android.view.View
     import androidx.fragment.app.activityViewModels
     import androidx.fragment.app.viewModels
-    import androidx.navigation.fragment.findNavController
     import com.example.learnnavigation.R
-    import com.example.learnnavigation.data.model.languageCountry
     import com.example.learnnavigation.databinding.FragmentChangeLanguageBinding
     import com.example.learnnavigation.ui.adapter.LanguageAdapter
     import com.example.learnnavigation.ui.viewmodel.ChangedLanguageViewModel
     import com.example.learnnavigation.ui.viewmodel.EventToolbar
     import com.example.learnnavigation.ui.viewmodel.ShareViewModel
     import com.example.learnnavigation.utils.Const.LANGUAGE
-    import com.example.learnnavigation.utils.LocaleManager
-    import com.example.learnnavigation.utils.SharePrefs
 
     class FragmentChangeLanguage :
         BaseFragmentDataBinding<FragmentChangeLanguageBinding, ChangedLanguageViewModel>() {
